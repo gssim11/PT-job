@@ -16,9 +16,6 @@
         /* Modal Animation */
         .modal { transition: opacity 0.25s ease; }
         body.modal-active { overflow-x: hidden; overflow-y: hidden !important; }
-        
-        /* Filter Button Styles */
-        .filter-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; }
     </style>
 </head>
 <body class="text-gray-800 relative">
@@ -44,14 +41,13 @@
                 </div>
             </div>
             
-            <!-- Filters (Updated Categories) -->
+            <!-- Filters -->
             <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start" id="filterContainer">
                 <button class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium bg-blue-600 text-white transition-colors" data-filter="all">전체보기</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" data-filter="public">공공/국립/지방/시립 병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" data-filter="university">대학병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" data-filter="general">종합병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" data-filter="rehab">재활/요양 병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors" data-filter="corporate">대기업(사내 부속 병원)</button>
+                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="public">공공/국립/지방</button>
+                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="university">대학병원</button>
+                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="rehab">재활/요양/시립</button>
+                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="corporate">대기업/종합</button>
             </div>
         </div>
     </header>
@@ -132,19 +128,81 @@
     <script>
         // Data Source
         const hospitals = [
-            // --- 대학병원 (Filter: university) ---
+            // --- 국립대병원 ---
             { category: "university", type: "국립대", name: "서울대학교병원", location: "서울", home: "https://www.snuh.org/", job: "https://snuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "분당서울대학교병원", location: "성남", home: "https://www.snubh.org/", job: "https://snubh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "부산대학교병원", location: "부산", home: "https://www.pnuh.or.kr/", job: "https://www.pnuh.or.kr/pnuh/recruit/list.do?rbsIdx=307" },
             { category: "university", type: "국립대", name: "양산부산대학교병원", location: "양산", home: "https://www.pnuyh.or.kr/", job: "https://pnuyh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "경북대학교병원", location: "대구", home: "https://www.knuh.kr/index.asp", job: "https://knuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "칠곡경북대학교병원", location: "대구", home: "https://www.knuch.kr:442/index.asp", job: "https://knuch.recruiter.co.kr/" },
+            { category: "university", type: "국립대", name: "경상국립대학교병원", location: "진주", home: "https://www.gnuh.co.kr/", job: "https://gnuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "전남대학교병원", location: "광주", home: "https://www.cnuh.com/", job: "https://cnuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "전북대학교병원", location: "전주", home: "https://www.jbuh.co.kr/main.do", job: "https://new.cuh.co.kr/recruit/" },
             { category: "university", type: "국립대", name: "충남대학교병원", location: "대전", home: "https://www.cnuh.co.kr/", job: "https://cnuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "충북대학교병원", location: "청주", home: "https://www.cbnuh.or.kr/", job: "https://cbnuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "강원대학교병원", location: "춘천", home: "https://www.knuh.or.kr/", job: "https://knuh.recruiter.co.kr/" },
             { category: "university", type: "국립대", name: "제주대학교병원", location: "제주", home: "https://www.jejunuh.co.kr/", job: "https://jejunuh.recruiter.co.kr/" },
+
+            // --- 특수목적 ---
+            { category: "public", type: "특수목적", name: "국립재활원", location: "서울", home: "https://www.nrc.go.kr/", job: "https://www.nrc.go.kr/portal/html/content.do?depth=ni&menu_cd=05_03_00_01" },
+            { category: "public", type: "특수목적", name: "국립교통재활병원", location: "양평", home: "https://www.ntrh.or.kr/", job: "https://ntrh.recruiter.co.kr/" },
+            { category: "public", type: "특수목적", name: "근로복지공단 병원", location: "통합", home: "https://www.kcomwel.or.kr/", job: "https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp" },
+            { category: "public", type: "특수목적", name: "근로복지공단 경기요양", location: "화성", home: "https://www.comwel.or.kr/gyeonggi/index.jsp", job: "https://www.kcomwel.or.kr/gyeonggicare/index.jsp" },
+            { category: "public", type: "특수목적", name: "한국보훈복지의료공단", location: "통합", home: "https://www.bohun.or.kr/", job: "https://recruit.bohun.or.kr/" },
+            { category: "public", type: "특수목적", name: "국민건강보험 일산병원", location: "고양", home: "https://www.nhimc.or.kr/", job: "https://knhis.recruiter.co.kr/" },
+            { category: "public", type: "특수목적", name: "국립경찰병원", location: "서울", home: "https://www.nph.go.kr/", job: "https://www.nph.go.kr/nph/html/intro/recruit_01.do?menu_cd=01_05_01_01" },
+            { category: "public", type: "특수목적", name: "국립암센터", location: "고양", home: "https://www.ncc.re.kr/", job: "https://ncc.recruiter.co.kr/" },
+            { category: "public", type: "특수목적", name: "대한적십자사 병원", location: "통합", home: "https://www.rch.or.kr/web/main/main", job: "https://www.redcross.or.kr/recruit/" },
+            { category: "public", type: "특수목적", name: "한국원자력의학원", location: "서울", home: "https://www.kirams.re.kr/", job: "https://kirams.recruiter.co.kr/" },
+
+            // --- 권역재활 ---
+            { category: "rehab", type: "권역재활", name: "경북권역재활병원", location: "경산", home: "http://www.grrh.or.kr/", job: "http://www.grrh.or.kr/main/bbs/index.do?menu_idx=32&master_idx=3" },
+            { category: "rehab", type: "권역재활", name: "제주권역재활병원", location: "서귀포", home: "https://jrh.or.kr/", job: "https://jrh.or.kr/employment?category=" },
+            { category: "rehab", type: "권역재활", name: "강원권역재활병원", location: "춘천", home: "http://www.grh.or.kr/", job: "http://www.grh.or.kr/main/board/list.do?menu_idx=37&manage_idx=15" },
+            { category: "rehab", type: "권역재활", name: "호남권역재활병원", location: "광주", home: "https://honamhosp.or.kr/", job: "https://honamhosp.or.kr/bbs/board.php?bo_table=6040" },
+            { category: "rehab", type: "권역재활", name: "경인권역재활병원", location: "인천", home: "https://www.rch.or.kr/web/rchkyungin/main", job: "https://www.rch.or.kr/web/rchkyungin/bbs/employment" },
+
+            // --- 서울시립 ---
+            { category: "rehab", type: "시립병원", name: "서울특별시 서남병원", location: "서울", home: "https://www.seoulsnh.or.kr/", job: "https://www.seoulsnh.or.kr/main/contents.do?menuNo=200028" },
+            { category: "public", type: "시립병원", name: "서울특별시 보라매병원", location: "서울", home: "https://www.brmh.org/", job: "https://brmh.recruiter.co.kr/" },
+            { category: "rehab", type: "시립병원", name: "서울특별시 어린이병원", location: "서울", home: "https://childhosp.seoul.go.kr/", job: "https://childhosp.seoul.go.kr/news/recruit" },
+            { category: "rehab", type: "시립병원", name: "서울특별시 동부병원", location: "서울", home: "https://www.dbhosp.go.kr/", job: "https://www.dbhosp.go.kr/home/sub.php?menukey=293" },
+            { category: "rehab", type: "시립병원", name: "서울특별시 북부병원", location: "서울", home: "https://www.seoulnmh.net/", job: "https://www.bbhosp.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104003000000" },
+            { category: "rehab", type: "시립병원", name: "서울특별시 서북병원", location: "서울", home: "https://sbhosp.seoul.go.kr/", job: "https://sbhosp.seoul.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104001000000" },
+
+            // --- 지방의료원 ---
+            { category: "public", type: "지방의료원", name: "서울의료원", location: "서울", home: "https://www.seoulmc.or.kr/", job: "https://www.seoulmc.or.kr/pms/board/list.do?boardidn=216&menucdv=06030000" },
+            { category: "public", type: "지방의료원", name: "인천광역시의료원", location: "인천", home: "https://www.icmc.or.kr/", job: "https://icmc.recruiter.co.kr/" },
+            { category: "public", type: "지방의료원", name: "경기도의료원 (통합)", location: "경기", home: "https://www.medical.or.kr/", job: "https://medical.saramin.co.kr/" },
+            { category: "public", type: "지방의료원", name: "성남시의료원", location: "성남", home: "https://www.scmc.kr/", job: "https://www.scmc.kr/home/index.do?menu_code=05020200" },
+            { category: "public", type: "지방의료원", name: "부산광역시의료원", location: "부산", home: "https://www.busanmc.or.kr/", job: "https://www.busanmc.or.kr/busanmc/index.php?pCode=recruit" },
+            { category: "public", type: "지방의료원", name: "마산의료원", location: "창원", home: "https://www.mmc.or.kr/", job: "https://www.mmc.or.kr/board/list.do?boardId=BBS_0000021" },
+            { category: "public", type: "지방의료원", name: "대구의료원", location: "대구", home: "https://www.daegumc.co.kr/", job: "https://www.daegumc.co.kr/content/01about/07_01.php" },
+            { category: "public", type: "지방의료원", name: "포항의료원", location: "포항", home: "https://pmc.or.kr/front/main.do", job: "http://www.phmed.or.kr/content/05community/03_01.php" },
+            { category: "public", type: "지방의료원", name: "안동의료원", location: "안동", home: "https://amc.or.kr/", job: "https://amc.or.kr/board/list.do?mnuid=060401" },
+            { category: "public", type: "지방의료원", name: "김천의료원", location: "김천", home: "https://gcmc.or.kr/", job: "https://gcmc.or.kr/board/list.do?mnuid=060401" },
+            { category: "public", type: "지방의료원", name: "울진군의료원", location: "울진", home: "http://www.umc.or.kr/", job: "http://www.umc.or.kr/index.php?page=html&mc=0603" },
+            { category: "public", type: "지방의료원", name: "원주의료원", location: "원주", home: "https://kwmc.or.kr/", job: "https://kwmc.or.kr/comm/recruit.html" },
+            { category: "public", type: "지방의료원", name: "강릉의료원", location: "강릉", home: "https://www.gnmc.or.kr/", job: "https://www.gnmc.or.kr/gnmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
+            { category: "public", type: "지방의료원", name: "속초의료원", location: "속초", home: "https://www.sokchomc.co.kr/", job: "https://www.sokchomc.or.kr/sokchomc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
+            { category: "public", type: "지방의료원", name: "삼척의료원", location: "삼척", home: "https://www.ksmc.or.kr/", job: "https://www.samcheokmc.or.kr/samcheokmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
+            { category: "public", type: "지방의료원", name: "영월의료원", location: "영월", home: "https://www.youngwol.org/", job: "https://www.youngwol.org/youngwol/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
+            { category: "public", type: "지방의료원", name: "청주의료원", location: "청주", home: "http://www.cjmc.or.kr/", job: "http://www.cjmc.or.kr/home/sub.php?menukey=138" },
+            { category: "public", type: "지방의료원", name: "충주의료원", location: "충주", home: "http://www.cbmc.or.kr/", job: "http://www.cbmc.or.kr/home/sub.php?menukey=306" },
+            { category: "public", type: "지방의료원", name: "천안의료원", location: "천안", home: "http://www.camc.or.kr/", job: "http://www.camc.or.kr/home/sub.php?menukey=137" },
+            { category: "public", type: "지방의료원", name: "공주의료원", location: "공주", home: "https://gjmc.or.kr/", job: "https://gjmc.or.kr/gjmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
+            { category: "public", type: "지방의료원", name: "서산의료원", location: "서산", home: "https://www.seosanmc.or.kr/", job: "https://www.seosanmc.or.kr/seosanmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
+            { category: "public", type: "지방의료원", name: "홍성의료원", location: "홍성", home: "http://www.hsmc.or.kr/", job: "http://www.hsmc.or.kr/home/sub.php?menukey=210" },
+            { category: "public", type: "지방의료원", name: "군산의료원", location: "군산", home: "https://www.kunmed.or.kr/", job: "https://www.kunmed.or.kr/board/bbs/board.php?bo_table=recruit" },
+            { category: "public", type: "지방의료원", name: "남원의료원", location: "남원", home: "http://www.namwonmed.or.kr/", job: "http://www.namwonmed.or.kr/content/hire_notice" },
+            { category: "public", type: "지방의료원", name: "진안군의료원", location: "진안", home: "https://www.jgmc.kr/", job: "http://www.jnmc.or.kr/board/list.asp?board_id=recruit_01" },
+            { category: "public", type: "지방의료원", name: "목포시의료원", location: "목포", home: "https://www.mokpomc.or.kr/", job: "https://www.mokpomc.com/bbs/board.php?bo_table=recruit" },
+            { category: "public", type: "지방의료원", name: "순천의료원", location: "순천", home: "https://jsmc.or.kr/", job: "http://www.scmc.or.kr/sub6_2.php" },
+            { category: "public", type: "지방의료원", name: "강진의료원", location: "강진", home: "http://www.gjmed.or.kr/", job: "http://www.gjmed.or.kr/home/sub.php?menukey=142" },
+            { category: "public", type: "지방의료원", name: "제주의료원", location: "제주", home: "https://www.jejumed.com/", job: "https://www.jejumed.com/skyboard/notice_03" },
+            { category: "public", type: "지방의료원", name: "서귀포의료원", location: "서귀포", home: "https://www.jjsmc.or.kr/", job: "https://www.jjsmc.or.kr/m/bbs/board.php?bo_table=4_5_1_1" },
+
+            // --- 사립대병원 ---
             { category: "university", type: "사립대(Big5)", name: "삼성서울병원", location: "서울", home: "http://www.samsunghospital.com/", job: "https://recruit.samsunghospital.com/" },
             { category: "university", type: "사립대(Big5)", name: "서울아산병원", location: "서울", home: "https://www.amc.seoul.kr/", job: "https://recruit.amc.seoul.kr/" },
             { category: "university", type: "사립대(Big5)", name: "세브란스병원", location: "서울", home: "https://sev.severance.healthcare/", job: "https://yuhs.recruiter.co.kr/" },
@@ -183,112 +241,63 @@
             { category: "university", type: "사립대", name: "건양대학교병원", location: "대전", home: "https://www.kyuh.ac.kr/", job: "https://kyuh.recruiter.co.kr/" },
             { category: "university", type: "사립대", name: "순천향대 천안병원", location: "천안", home: "https://www.schmc.ac.kr/cheonan/", job: "https://schmc.recruiter.co.kr/" },
 
-            // --- 공공/국립/지방/시립 (Filter: public) ---
-            { category: "public", type: "국립중앙", name: "국립중앙의료원", location: "서울", home: "https://www.nmc.or.kr", job: "https://www.nmc.or.kr/nmc/board/B0000007" },
-            { category: "public", type: "국립암", name: "국립암센터", location: "고양", home: "https://www.ncc.re.kr", job: "https://ncc.recruiter.co.kr/" },
-            { category: "public", type: "원자력", name: "한국원자력의학원", location: "서울", home: "https://www.kirams.re.kr", job: "https://kirams.recruiter.co.kr/" },
-            { category: "public", type: "국군", name: "국군수도/대전병원", location: "통합", home: "https://med.mnd.go.kr", job: "https://www.gojobs.go.kr" },
-            { category: "public", type: "특수목적", name: "국립재활원", location: "서울", home: "https://www.nrc.go.kr/", job: "https://www.nrc.go.kr/portal/html/content.do?depth=ni&menu_cd=05_03_00_01" },
-            { category: "public", type: "특수목적", name: "국립교통재활병원", location: "양평", home: "https://www.ntrh.or.kr/", job: "https://ntrh.recruiter.co.kr/" },
-            { category: "public", type: "특수목적", name: "근로복지공단 병원", location: "통합", home: "https://www.kcomwel.or.kr/", job: "https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp" },
-            { category: "public", type: "특수목적", name: "근로복지공단 경기요양", location: "화성", home: "https://www.comwel.or.kr/gyeonggi/index.jsp", job: "https://www.kcomwel.or.kr/gyeonggicare/index.jsp" },
-            { category: "public", type: "특수목적", name: "한국보훈복지의료공단", location: "통합", home: "https://www.bohun.or.kr/", job: "https://recruit.bohun.or.kr/" },
-            { category: "public", type: "특수목적", name: "국민건강보험 일산병원", location: "고양", home: "https://www.nhimc.or.kr/", job: "https://knhis.recruiter.co.kr/" },
-            { category: "public", type: "특수목적", name: "국립경찰병원", location: "서울", home: "https://www.nph.go.kr/", job: "https://www.nph.go.kr/nph/html/intro/recruit_01.do?menu_cd=01_05_01_01" },
-            { category: "public", type: "특수목적", name: "대한적십자사 병원", location: "통합", home: "https://www.rch.or.kr/web/main/main", job: "https://www.redcross.or.kr/recruit/" },
+            // --- 종합병원 ---
+            { category: "corporate", type: "종합병원", name: "인천기독병원", location: "인천", home: "https://www.goich.co.kr/", job: "http://www.ich.or.kr/bbs/board.php?bo_table=recruit" },
+            { category: "corporate", type: "종합병원", name: "인천세종병원", location: "인천", home: "https://incheon.sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
+            { category: "corporate", type: "종합병원", name: "나은병원", location: "인천", home: "https://www.luga.co.kr/", job: "http://www.naeun.co.kr/intro/intro_09.php" },
+            { category: "corporate", type: "종합병원", name: "나사렛국제병원", location: "인천", home: "http://www.nasaret.co.kr/", job: "http://www.nasaret.co.kr/about/about07.html" },
+            { category: "corporate", type: "종합병원", name: "인천효성병원", location: "인천", home: "http://www.hshospital.co.kr/", job: "http://www.hshospital.co.kr/bbs/board.php?bo_table=recruit" },
+            { category: "corporate", type: "종합병원", name: "부천세종병원", location: "부천", home: "https://sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
+            { category: "corporate", type: "종합병원", name: "윌스기념병원", location: "수원", home: "https://allspine.com/", job: "https://allspine.com/member/recruit.html" },
+            { category: "corporate", type: "종합병원", name: "수원센텀병원", location: "수원", home: "http://suwoncentum.com/", job: "http://www.centumhosp.com/bbs/board.php?bo_table=recruit" },
+            { category: "corporate", type: "종합병원", name: "H+ 양지병원", location: "서울", home: "https://www.newyjh.com/main/index.htm", job: "https://new.hyangji.co.kr/intro/recruit.php" },
+            { category: "corporate", type: "종합병원", name: "혜민병원", location: "서울", home: "http://www.e-hyemin.co.kr/", job: "http://www.e-hyemin.co.kr/bbs/board.php?bo_table=recruit" },
+            { category: "corporate", type: "종합병원", name: "우리들병원", location: "서울", home: "https://wooridul.co.kr/", job: "https://wooridul.co.kr/" },
+            { category: "corporate", type: "종합병원", name: "힘찬병원", location: "통합", home: "https://himchanhospital.com/", job: "https://himchanhospital.com/intro/recruit.php" },
+            { category: "corporate", type: "종합병원", name: "나누리병원", location: "통합", home: "https://nanoori.co.kr/", job: "https://nanoori.co.kr/" },
+            { category: "corporate", type: "종합병원", name: "예수병원", location: "전주", home: "https://www.jesushospital.com/", job: "https://www.jesushospital.com/sub.php?code=06_03" },
+            { category: "corporate", type: "종합병원", name: "광주기독병원", location: "광주", home: "http://www.kch.or.kr/", job: "http://www.kch.or.kr/board/list.html?code=recruit" },
+            { category: "corporate", type: "종합병원", name: "목포한국병원", location: "목포", home: "https://www.hank.co.kr/", job: "http://www.hankook-hospital.co.kr/bbs/board.php?bo_table=recruit" },
+            { category: "corporate", type: "종합병원", name: "명지병원", location: "고양", home: "https://www.mjh.or.kr/", job: "https://mjh.recruiter.co.kr/" },
+            { category: "corporate", type: "종합병원", name: "분당제생병원", location: "성남", home: "https://www.dmc.or.kr/", job: "https://www.dmc.or.kr/portal/board/list/B0000030.do?menuNo=20503000" },
+            { category: "corporate", type: "종합병원", name: "삼육서울병원", location: "서울", home: "https://symcs.co.kr/", job: "https://symcs.co.kr/board/list.html?code=recruit" },
+            { category: "corporate", type: "종합병원", name: "대구파티마병원", location: "대구", home: "https://fatima.or.kr/", job: "https://fatima.or.kr/front/board/boardlist.php?code=recruit" },
+            { category: "corporate", type: "종합병원", name: "창원파티마병원", location: "창원", home: "https://www.fatimahosp.co.kr/", job: "http://fatimahosp.co.kr/intro/intro06_01.html" },
+            { category: "corporate", type: "종합병원", name: "안동병원", location: "안동", home: "http://www.andonghospital.co.kr/", job: "http://www.andonghospital.co.kr/05_hospital/hospital05.php" },
+            { category: "corporate", type: "종합병원", name: "포항세명기독병원", location: "포항", home: "https://www.phgidok.com/main", job: "http://www.phkh.co.kr/pages/community/recruit.php" },
+            { category: "corporate", type: "종합병원", name: "대전선병원", location: "대전", home: "https://www.sunhospital.com/", job: "https://www.sunhospital.co.kr/board/list.html?code=recruit" },
+            { category: "corporate", type: "종합병원", name: "대동병원", location: "부산", home: "https://www.ddh.co.kr/", job: "http://www.daedong.co.kr/06_intro/intro_06.php" },
+            { category: "corporate", type: "종합병원", name: "부민병원", location: "부산/서울", home: "https://www.bumin.co.kr/", job: "https://www.bumin.co.kr/" },
+
+            // --- 대기업 ---
+            { category: "corporate", type: "대기업", name: "강북삼성병원 (사내의원)", location: "수원/기흥", home: "https://main.kbsmc.co.kr/main/main.do", job: "https://kbsmc.recruiter.co.kr/" },
+            { category: "corporate", type: "대기업", name: "삼성전자 (사내의원)", location: "전국", home: "https://www.samsungcareers.com/insight/welfare", job: "https://www.samsungcareers.com/" },
+            { category: "corporate", type: "대기업", name: "삼성창원병원 (부속)", location: "창원", home: "https://smc.skku.edu/", job: "https://smc.recruiter.co.kr/" },
+            { category: "corporate", type: "대기업", name: "현대위아", location: "창원/의왕", home: "https://recruit.hyundai-wia.com/", job: "https://recruit.hyundai-wia.com/" },
             { category: "public", type: "공공기관", name: "기장군도시관리공단", location: "부산", home: "https://www.gijangcmc.or.kr/", job: "https://www.gijangcmc.or.kr/clean/index.php?pCode=clean_0201" },
-            { category: "public", type: "지방의료원", name: "서울의료원", location: "서울", home: "https://www.seoulmc.or.kr/", job: "https://www.seoulmc.or.kr/pms/board/list.do?boardidn=216&menucdv=06030000" },
-            { category: "public", type: "지방의료원", name: "인천광역시의료원", location: "인천", home: "https://www.icmc.or.kr/", job: "https://icmc.recruiter.co.kr/" },
-            { category: "public", type: "지방의료원", name: "경기도의료원 (통합)", location: "경기", home: "https://www.medical.or.kr/", job: "https://medical.saramin.co.kr/" },
-            { category: "public", type: "지방의료원", name: "성남시의료원", location: "성남", home: "https://www.scmc.kr/", job: "https://www.scmc.kr/home/index.do?menu_code=05020200" },
-            { category: "public", type: "지방의료원", name: "부산광역시의료원", location: "부산", home: "https://www.busanmc.or.kr/", job: "https://www.busanmc.or.kr/busanmc/index.php?pCode=recruit" },
-            { category: "public", type: "지방의료원", name: "마산의료원", location: "창원", home: "https://www.mmc.or.kr/", job: "https://www.mmc.or.kr/board/list.do?boardId=BBS_0000021" },
-            { category: "public", type: "지방의료원", name: "대구의료원", location: "대구", home: "https://www.daegumc.co.kr/", job: "https://www.daegumc.co.kr/content/01about/07_01.php" },
-            { category: "public", type: "지방의료원", name: "포항의료원", location: "포항", home: "https://pmc.or.kr/front/main.do", job: "http://www.phmed.or.kr/content/05community/03_01.php" },
-            { category: "public", type: "지방의료원", name: "안동의료원", location: "안동", home: "https://amc.or.kr/", job: "https://amc.or.kr/board/list.do?mnuid=060401" },
-            { category: "public", type: "지방의료원", name: "김천의료원", location: "김천", home: "https://gcmc.or.kr/", job: "https://gcmc.or.kr/board/list.do?mnuid=060401" },
-            { category: "public", type: "지방의료원", name: "울진군의료원", location: "울진", home: "http://www.umc.or.kr/", job: "http://www.umc.or.kr/index.php?page=html&mc=0603" },
-            { category: "public", type: "지방의료원", name: "원주의료원", location: "원주", home: "https://kwmc.or.kr/", job: "https://kwmc.or.kr/comm/recruit.html" },
-            { category: "public", type: "지방의료원", name: "강릉의료원", location: "강릉", home: "https://www.gnmc.or.kr/", job: "https://www.gnmc.or.kr/gnmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
-            { category: "public", type: "지방의료원", name: "속초의료원", location: "속초", home: "https://www.sokchomc.co.kr/", job: "https://www.sokchomc.or.kr/sokchomc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "삼척의료원", location: "삼척", home: "https://www.ksmc.or.kr/", job: "https://www.samcheokmc.or.kr/samcheokmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "영월의료원", location: "영월", home: "https://www.youngwol.org/", job: "https://www.youngwol.org/youngwol/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "청주의료원", location: "청주", home: "http://www.cjmc.or.kr/", job: "http://www.cjmc.or.kr/home/sub.php?menukey=138" },
-            { category: "public", type: "지방의료원", name: "충주의료원", location: "충주", home: "http://www.cbmc.or.kr/", job: "http://www.cbmc.or.kr/home/sub.php?menukey=306" },
-            { category: "public", type: "지방의료원", name: "천안의료원", location: "천안", home: "http://www.camc.or.kr/", job: "http://www.camc.or.kr/home/sub.php?menukey=137" },
-            { category: "public", type: "지방의료원", name: "공주의료원", location: "공주", home: "https://gjmc.or.kr/", job: "https://gjmc.or.kr/gjmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
-            { category: "public", type: "지방의료원", name: "서산의료원", location: "서산", home: "https://www.seosanmc.or.kr/", job: "https://www.seosanmc.or.kr/seosanmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "홍성의료원", location: "홍성", home: "http://www.hsmc.or.kr/", job: "http://www.hsmc.or.kr/home/sub.php?menukey=210" },
-            { category: "public", type: "지방의료원", name: "군산의료원", location: "군산", home: "https://www.kunmed.or.kr/", job: "https://www.kunmed.or.kr/board/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "지방의료원", name: "남원의료원", location: "남원", home: "http://www.namwonmed.or.kr/", job: "http://www.namwonmed.or.kr/content/hire_notice" },
-            { category: "public", type: "지방의료원", name: "진안군의료원", location: "진안", home: "https://www.jgmc.kr/", job: "http://www.jnmc.or.kr/board/list.asp?board_id=recruit_01" },
-            { category: "public", type: "지방의료원", name: "목포시의료원", location: "목포", home: "https://www.mokpomc.or.kr/", job: "https://www.mokpomc.com/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "지방의료원", name: "순천의료원", location: "순천", home: "https://jsmc.or.kr/", job: "http://www.scmc.or.kr/sub6_2.php" },
-            { category: "public", type: "지방의료원", name: "강진의료원", location: "강진", home: "http://www.gjmed.or.kr/", job: "http://www.gjmed.or.kr/home/sub.php?menukey=142" },
-            { category: "public", type: "지방의료원", name: "제주의료원", location: "제주", home: "https://www.jejumed.com/", job: "https://www.jejumed.com/skyboard/notice_03" },
-            { category: "public", type: "지방의료원", name: "서귀포의료원", location: "서귀포", home: "https://www.jjsmc.or.kr/", job: "https://www.jjsmc.or.kr/m/bbs/board.php?bo_table=4_5_1_1" },
-            { category: "public", type: "권역재활", name: "경북권역재활병원", location: "경산", home: "http://www.grrh.or.kr/", job: "http://www.grrh.or.kr/main/bbs/index.do?menu_idx=32&master_idx=3" },
-            { category: "public", type: "권역재활", name: "제주권역재활병원", location: "서귀포", home: "https://jrh.or.kr/", job: "https://jrh.or.kr/employment?category=" },
-            { category: "public", type: "권역재활", name: "강원권역재활병원", location: "춘천", home: "http://www.grh.or.kr/", job: "http://www.grh.or.kr/main/board/list.do?menu_idx=37&manage_idx=15" },
-            { category: "public", type: "권역재활", name: "호남권역재활병원", location: "광주", home: "https://honamhosp.or.kr/", job: "https://honamhosp.or.kr/bbs/board.php?bo_table=6040" },
-            { category: "public", type: "권역재활", name: "경인권역재활병원", location: "인천", home: "https://www.rch.or.kr/web/rchkyungin/main", job: "https://www.rch.or.kr/web/rchkyungin/bbs/employment" },
-            { category: "public", type: "시립병원", name: "서울특별시 보라매병원", location: "서울", home: "https://www.brmh.org/", job: "https://brmh.recruiter.co.kr/" },
-            { category: "public", type: "시립병원", name: "서울특별시 서남병원", location: "서울", home: "https://www.seoulsnh.or.kr/", job: "https://www.seoulsnh.or.kr/main/contents.do?menuNo=200028" },
-            { category: "public", type: "시립병원", name: "서울특별시 어린이병원", location: "서울", home: "https://childhosp.seoul.go.kr/", job: "https://childhosp.seoul.go.kr/news/recruit" },
-            { category: "public", type: "시립병원", name: "서울특별시 동부병원", location: "서울", home: "https://www.dbhosp.go.kr/", job: "https://www.dbhosp.go.kr/home/sub.php?menukey=293" },
-            { category: "public", type: "시립병원", name: "서울특별시 북부병원", location: "서울", home: "https://www.seoulnmh.net/", job: "https://www.bbhosp.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104003000000" },
-            { category: "public", type: "시립병원", name: "서울특별시 서북병원", location: "서울", home: "https://sbhosp.seoul.go.kr/", job: "https://sbhosp.seoul.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104001000000" },
-            { category: "public", type: "시립병원", name: "안산시립노인전문병원", location: "안산", home: "http://www.bumomam.or.kr/", job: "http://www.ansan-silver.or.kr/bbs/board.php?bo_table=sub05_04" },
-            { category: "public", type: "구립병원", name: "강남구립행복요양병원", location: "서울", home: "http://www.gangnamguhospital.kr/", job: "http://www.gangnamhappy.or.kr/sub01/sub01_04.php" },
-            { category: "public", type: "구립병원", name: "도봉실버센터", location: "서울", home: "https://dobongsilver.or.kr/", job: "http://www.dbcare.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "구립병원", name: "구립양천어르신요양센터", location: "서울", home: "https://www.yc365sun.or.kr/", job: "http://www.ych.or.kr/" },
-            { category: "public", type: "시립병원", name: "시립서부노인전문요양센터", location: "서울", home: "http://www.seobusilver.or.kr/", job: "https://www.seoulwest.or.kr/05_recruit/recruit_01.php" },
-            { category: "public", type: "시립병원", name: "시립동부노인전문요양센터", location: "서울", home: "http://www.dbsc.or.kr/", job: "http://www.dbc.or.kr/" },
-            { category: "public", type: "구립병원", name: "구립서초노인요양센터", location: "서울", home: "https://www.sc9988.or.kr/", job: "https://www.seochosenior.co.kr/sub/sub01_05.php" },
-            { category: "public", type: "구립병원", name: "(서울시립)강동실버케어센터", location: "서울", home: "http://www.gangdongcare.com/", job: "https://www.kdh.or.kr/" },
-            { category: "public", type: "구립병원", name: "시립마포실버케어센터", location: "서울", home: "https://www.mapocare.com/index.php", job: "http://www.silver-mapo.or.kr/" },
-            { category: "public", type: "시립병원", name: "수원시립노인전문요양원", location: "수원", home: "http://wonsilver.or.kr/", job: "http://www.swgeri.or.kr/" },
-            { category: "public", type: "시립병원", name: "경기도립노인전문용인병원", location: "용인", home: "https://www.silvernet.or.kr/", job: "http://yi1.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "시립병원", name: "경기도립노인전문시흥병원", location: "시흥", home: "https://www.gshospital.com/", job: "http://shgeri.or.kr/" },
-            { category: "public", type: "시립병원", name: "성남시립노인요양센터", location: "성남", home: "http://www.scsh.or.kr/", job: "http://www.scsh.or.kr/" },
-            { category: "public", type: "시립병원", name: "경기도립노인전문평택병원", location: "평택", home: "https://www.goodmsilver.co.kr/", job: "http://www.pthosp.or.kr/" },
-            { category: "public", type: "도립병원", name: "경기도립노인전문병원", location: "용인", home: "https://www.gg.go.kr/contents/contents.do?ciIdx=987166&menuId=266153", job: "http://www.silverh.or.kr/" },
-            { category: "public", type: "시립병원", name: "인천광역시립노인치매요양병원", location: "인천", home: "https://icesh.co.kr/", job: "https://incheon.gnah.co.kr/" },
-            { category: "public", type: "시립병원", name: "대전광역시립 제1노인전문병원", location: "대전", home: "https://ilovenoin.com/", job: "http://www.djsen.or.kr/" },
-            { category: "public", type: "시립병원", name: "부산 노인전문 제1병원", location: "부산", home: "http://www.busangh.co.kr/", job: "https://www.busangeri.or.kr/" },
-            { category: "public", type: "도립병원", name: "경상남도립양산노인전문병원", location: "통합", home: "http://gygh.co.kr/", job: "http://www.gnsilver.or.kr/" },
-            { category: "public", type: "도립병원", name: "경북도립경산노인전문요양병원", location: "경북", home: "https://gssilver.co.kr/", job: "https://www.gbil.go.kr/" },
-            { category: "public", type: "도립병원", name: "강원특별자치도립강릉요양병원", location: "강릉", home: "http://www.gnmch.or.kr/new/", job: "http://www.gncare.or.kr/" },
 
-            // --- 종합병원 (Filter: general) ---
-            { category: "general", type: "종합병원", name: "인천기독병원", location: "인천", home: "https://www.goich.co.kr/", job: "http://www.ich.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "general", type: "종합병원", name: "인천세종병원", location: "인천", home: "https://incheon.sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
-            { category: "general", type: "종합병원", name: "나은병원", location: "인천", home: "https://www.luga.co.kr/", job: "http://www.naeun.co.kr/intro/intro_09.php" },
-            { category: "general", type: "종합병원", name: "나사렛국제병원", location: "인천", home: "http://www.nasaret.co.kr/", job: "http://www.nasaret.co.kr/about/about07.html" },
-            { category: "general", type: "종합병원", name: "인천효성병원", location: "인천", home: "http://www.hshospital.co.kr/", job: "http://www.hshospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "general", type: "종합병원", name: "부천세종병원", location: "부천", home: "https://sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
-            { category: "general", type: "종합병원", name: "윌스기념병원", location: "수원", home: "https://allspine.com/", job: "https://allspine.com/member/recruit.html" },
-            { category: "general", type: "종합병원", name: "수원센텀병원", location: "수원", home: "http://suwoncentum.com/", job: "http://www.centumhosp.com/bbs/board.php?bo_table=recruit" },
-            { category: "general", type: "종합병원", name: "H+ 양지병원", location: "서울", home: "https://www.newyjh.com/main/index.htm", job: "https://new.hyangji.co.kr/intro/recruit.php" },
-            { category: "general", type: "종합병원", name: "혜민병원", location: "서울", home: "http://www.e-hyemin.co.kr/", job: "http://www.e-hyemin.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "general", type: "종합병원", name: "우리들병원", location: "서울", home: "https://wooridul.co.kr/", job: "https://wooridul.co.kr/" },
-            { category: "general", type: "종합병원", name: "힘찬병원", location: "통합", home: "https://himchanhospital.com/", job: "https://himchanhospital.com/intro/recruit.php" },
-            { category: "general", type: "종합병원", name: "나누리병원", location: "통합", home: "https://nanoori.co.kr/", job: "https://nanoori.co.kr/" },
-            { category: "general", type: "종합병원", name: "예수병원", location: "전주", home: "https://www.jesushospital.com/", job: "https://www.jesushospital.com/sub.php?code=06_03" },
-            { category: "general", type: "종합병원", name: "광주기독병원", location: "광주", home: "http://www.kch.or.kr/", job: "http://www.kch.or.kr/board/list.html?code=recruit" },
-            { category: "general", type: "종합병원", name: "목포한국병원", location: "목포", home: "https://www.hank.co.kr/", job: "http://www.hankook-hospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "general", type: "종합병원", name: "명지병원", location: "고양", home: "https://www.mjh.or.kr/", job: "https://mjh.recruiter.co.kr/" },
-            { category: "general", type: "종합병원", name: "분당제생병원", location: "성남", home: "https://www.dmc.or.kr/", job: "https://www.dmc.or.kr/portal/board/list/B0000030.do?menuNo=20503000" },
-            { category: "general", type: "종합병원", name: "삼육서울병원", location: "서울", home: "https://symcs.co.kr/", job: "https://symcs.co.kr/board/list.html?code=recruit" },
-            { category: "general", type: "종합병원", name: "대구파티마병원", location: "대구", home: "https://fatima.or.kr/", job: "https://fatima.or.kr/front/board/boardlist.php?code=recruit" },
-            { category: "general", type: "종합병원", name: "창원파티마병원", location: "창원", home: "https://www.fatimahosp.co.kr/", job: "http://fatimahosp.co.kr/intro/intro06_01.html" },
-            { category: "general", type: "종합병원", name: "안동병원", location: "안동", home: "http://www.andonghospital.co.kr/", job: "http://www.andonghospital.co.kr/05_hospital/hospital05.php" },
-            { category: "general", type: "종합병원", name: "포항세명기독병원", location: "포항", home: "https://www.phgidok.com/main", job: "http://www.phkh.co.kr/pages/community/recruit.php" },
-            { category: "general", type: "종합병원", name: "대전선병원", location: "대전", home: "https://www.sunhospital.com/", job: "https://www.sunhospital.co.kr/board/list.html?code=recruit" },
-            { category: "general", type: "종합병원", name: "대동병원", location: "부산", home: "https://www.ddh.co.kr/", job: "http://www.daedong.co.kr/06_intro/intro_06.php" },
-            { category: "general", type: "종합병원", name: "부민병원", location: "부산/서울", home: "https://www.bumin.co.kr/", job: "https://www.bumin.co.kr/" },
-
-            // --- 재활/요양 (Filter: rehab) ---
+            // --- 재활/요양 ---
+            { category: "rehab", type: "시립병원", name: "안산시립노인전문병원", location: "안산", home: "http://www.bumomam.or.kr/", job: "http://www.ansan-silver.or.kr/bbs/board.php?bo_table=sub05_04" },
+            { category: "rehab", type: "구립병원", name: "강남구립행복요양병원", location: "서울", home: "http://www.gangnamguhospital.kr/", job: "http://www.gangnamhappy.or.kr/sub01/sub01_04.php" },
+            { category: "rehab", type: "구립병원", name: "도봉실버센터", location: "서울", home: "https://dobongsilver.or.kr/", job: "http://www.dbcare.or.kr/bbs/board.php?bo_table=recruit" },
+            { category: "rehab", type: "구립병원", name: "구립양천어르신요양센터", location: "서울", home: "https://www.yc365sun.or.kr/", job: "http://www.ych.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "시립서부노인전문요양센터", location: "서울", home: "http://www.seobusilver.or.kr/", job: "https://www.seoulwest.or.kr/05_recruit/recruit_01.php" },
+            { category: "rehab", type: "시립병원", name: "시립동부노인전문요양센터", location: "서울", home: "http://www.dbsc.or.kr/", job: "http://www.dbc.or.kr/" },
+            { category: "rehab", type: "구립병원", name: "구립서초노인요양센터", location: "서울", home: "https://www.sc9988.or.kr/", job: "https://www.seochosenior.co.kr/sub/sub01_05.php" },
+            { category: "rehab", type: "구립병원", name: "(서울시립)강동실버케어센터", location: "서울", home: "http://www.gangdongcare.com/", job: "https://www.kdh.or.kr/" },
+            { category: "rehab", type: "구립병원", name: "시립마포실버케어센터", location: "서울", home: "https://www.mapocare.com/index.php", job: "http://www.silver-mapo.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "수원시립노인전문요양원", location: "수원", home: "http://wonsilver.or.kr/", job: "http://www.swgeri.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "경기도립노인전문용인병원", location: "용인", home: "https://www.silvernet.or.kr/", job: "http://yi1.or.kr/bbs/board.php?bo_table=recruit" },
+            { category: "rehab", type: "시립병원", name: "경기도립노인전문시흥병원", location: "시흥", home: "https://www.gshospital.com/", job: "http://shgeri.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "성남시립노인요양센터", location: "성남", home: "http://www.scsh.or.kr/", job: "http://www.scsh.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "경기도립노인전문평택병원", location: "평택", home: "https://www.goodmsilver.co.kr/", job: "http://www.pthosp.or.kr/" },
+            { category: "rehab", type: "도립병원", name: "경기도립노인전문병원", location: "용인", home: "https://www.gg.go.kr/contents/contents.do?ciIdx=987166&menuId=266153", job: "http://www.silverh.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "인천광역시립노인치매요양병원", location: "인천", home: "https://icesh.co.kr/", job: "https://incheon.gnah.co.kr/" },
+            { category: "rehab", type: "시립병원", name: "대전광역시립 제1노인전문병원", location: "대전", home: "https://ilovenoin.com/", job: "http://www.djsen.or.kr/" },
+            { category: "rehab", type: "시립병원", name: "부산 노인전문 제1병원", location: "부산", home: "http://www.busangh.co.kr/", job: "https://www.busangeri.or.kr/" },
+            { category: "rehab", type: "도립병원", name: "경상남도립양산노인전문병원", location: "통합", home: "http://gygh.co.kr/", job: "http://www.gnsilver.or.kr/" },
+            { category: "rehab", type: "도립병원", name: "경북도립경산노인전문요양병원", location: "경북", home: "https://gssilver.co.kr/", job: "https://www.gbil.go.kr/" },
+            { category: "rehab", type: "도립병원", name: "강원특별자치도립강릉요양병원", location: "강릉", home: "http://www.gnmch.or.kr/new/", job: "http://www.gncare.or.kr/" },
             { category: "rehab", type: "재활병원", name: "휴앤유병원", location: "부천", home: "http://www.hunu.co.kr/", job: "http://www.huenu.co.kr/bbs/board.php?bo_table=recruit" },
             { category: "rehab", type: "재활병원", name: "보바스기념병원", location: "성남", home: "https://www.bobath.co.kr/", job: "https://bobath.recruiter.co.kr/" },
             { category: "rehab", type: "재활병원", name: "SRC재활병원", location: "광주", home: "https://www.srchospital.com/", job: "http://www.srcmc.org/bbs/board.php?bo_table=recruit" },
@@ -307,13 +316,7 @@
             { category: "rehab", type: "요양병원", name: "동아대학교대신요양병원", location: "부산", home: "http://daudh.or.kr/", job: "http://www.donga-silver.or.kr/bbs/board.php?bo_table=recruit" },
             { category: "rehab", type: "요양병원", name: "인천새올요양병원", location: "인천", home: "http://www.saeall.net/default/", job: "http://www.saeol_ic.co.kr/bbs/board.php?bo_table=recruit" },
             { category: "rehab", type: "요양병원", name: "가은병원", location: "부천", home: "http://gaeunhospital.com/", job: "http://www.gaeunhospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "서울참요양병원", location: "서울", home: "https://www.gangseochamhospital.co.kr/", job: "http://www.seoulcham.com/bbs/board.php?bo_table=recruit" },
-
-            // --- 대기업 (Filter: corporate) ---
-            { category: "corporate", type: "대기업", name: "강북삼성병원 (사내의원)", location: "수원/기흥", home: "https://main.kbsmc.co.kr/main/main.do", job: "https://kbsmc.recruiter.co.kr/" },
-            { category: "corporate", type: "대기업", name: "삼성전자 (사내의원)", location: "전국", home: "https://www.samsungcareers.com/insight/welfare", job: "https://www.samsungcareers.com/" },
-            { category: "corporate", type: "대기업", name: "삼성창원병원 (부속)", location: "창원", home: "https://smc.skku.edu/", job: "https://smc.recruiter.co.kr/" },
-            { category: "corporate", type: "대기업", name: "현대위아", location: "창원/의왕", home: "https://recruit.hyundai-wia.com/", job: "https://recruit.hyundai-wia.com/" }
+            { category: "rehab", type: "요양병원", name: "서울참요양병원", location: "서울", home: "https://www.gangseochamhospital.co.kr/", job: "http://www.seoulcham.com/bbs/board.php?bo_table=recruit" }
         ];
 
         const grid = document.getElementById('hospitalGrid');
