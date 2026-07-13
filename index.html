@@ -1,495 +1,802 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>물리치료사 취업: 주요 의료기관</title>
-    
-    <!-- Google tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-88L26Q0BVV"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-88L26Q0BVV');
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f3f4f6; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .gradient-text { background-clip: text; -webkit-background-clip: text; color: transparent; background-image: linear-gradient(to right, #2563eb, #3b82f6); }
-        /* Smooth scroll behavior */
-        html { scroll-behavior: smooth; }
-        /* Modal Animation */
-        .modal { transition: opacity 0.25s ease; }
-        body.modal-active { overflow-x: hidden; overflow-y: hidden !important; }
-        /* Heart Animation */
-        .heart-btn { transition: transform 0.2s ease, color 0.2s ease; }
-        .heart-btn:active { transform: scale(1.3); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>물리치료사 취업 지도 — 수도권 종합병원 전수 수록</title>
+<meta name="description" content="안산대학교 물리치료학과 취업 진로 자료. 수도권(서울·경기·인천) 종합병원 전수와 전국 주요 의료기관, 재활·요양기관 채용 정보 내비게이터.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { sans: ['"Pretendard Variable"','Pretendard','system-ui','-apple-system','sans-serif'] },
+    colors: { ink:{50:'#f7f6f3',100:'#eceae4',900:'#1c1b18'}, brand:{50:'#effaf8',100:'#d7f0ec',600:'#0d7a6f',700:'#0b6359',800:'#0a4f47'} }
+  }}
+}
+</script>
+<style>
+  :root { --ease-premium: cubic-bezier(0.32, 0.72, 0, 1); }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; background:#f8f7f4; color:#26241f; letter-spacing:-0.011em; }
+  ::selection { background:#0d7a6f22; }
+  .num { font-variant-numeric: tabular-nums; }
+  /* grain overlay */
+  .grain { position:fixed; inset:0; z-index:60; pointer-events:none; opacity:.028; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* reveal on scroll */
+  .reveal { opacity:0; transform:translateY(22px); filter:blur(5px); transition: opacity .8s var(--ease-premium), transform .8s var(--ease-premium), filter .8s var(--ease-premium); }
+  .reveal.in { opacity:1; transform:translateY(0); filter:blur(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ transition:none; opacity:1; transform:none; filter:none; } }
+  /* card */
+  .hcard { transition: transform .5s var(--ease-premium), box-shadow .5s var(--ease-premium); }
+  .hcard:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -20px rgba(28,27,24,.16), 0 6px 16px -8px rgba(28,27,24,.08); }
+  .btn { transition: all .35s var(--ease-premium); }
+  .btn:active { transform: scale(.97); }
+  .chip { transition: all .35s var(--ease-premium); }
+  .chip:active { transform: scale(.96); }
+  .heart-btn { transition: transform .25s var(--ease-premium), color .25s var(--ease-premium); }
+  .heart-btn:active { transform: scale(1.35); }
+  /* modal */
+  .modal-wrap { transition: opacity .3s var(--ease-premium); }
+  .modal-panel { transition: transform .45s var(--ease-premium), opacity .45s var(--ease-premium); transform: translateY(26px) scale(.98); opacity:0; }
+  .modal-open .modal-panel { transform: translateY(0) scale(1); opacity:1; }
+  body.no-scroll { overflow:hidden; }
+  /* focus ring */
+  a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid #0d7a6f; outline-offset:2px; border-radius:6px; }
+  /* list view row */
+  .row-item { transition: background .3s var(--ease-premium); }
+  .row-item:hover { background:#fbfaf7; }
+  /* scrollbar (subtle) */
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb { background:#d8d5cc; border-radius:8px; border:3px solid #f8f7f4; }
+  .chipbar::-webkit-scrollbar{ height:0; }
+</style>
 </head>
-<body class="text-gray-800 relative">
+<body class="min-h-[100dvh] antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[80] focus:bg-white focus:px-4 focus:py-2 focus:rounded-full focus:shadow-lg text-sm">본문으로 건너뛰기</a>
+<div class="grain"></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-md z-50 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-heart-pulse text-blue-600 text-3xl mr-3"></i>
-                    <div>
-                        <h1 class="text-2xl font-bold text-gray-900">물리치료사 취업: 주요 의료기관</h1>
-                        <p class="text-xs text-gray-500">안산대학교 물리치료학과 심경섭 교수 (ver. 2026)</p>
-                    </div>
-                </div>
-                <!-- Search -->
-                <div class="relative w-full md:w-96">
-                    <input type="text" id="searchInput" placeholder="병원명 또는 지역 검색 (예: 수원, 삼성)" 
-                           class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <i class="fa-solid fa-search text-gray-400"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Filters -->
-            <div class="mt-4 flex flex-wrap gap-2 justify-center md:justify-start" id="filterContainer">
-                <button class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium bg-blue-600 text-white transition-colors" data-filter="all">전체보기</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="favorites"><i class="fa-solid fa-heart text-red-500 mr-1"></i>찜한 병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="public">공공/국립/지방</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="university">대학병원</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="rehab">재활/요양/시립</button>
-                <button class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors" data-filter="corporate">대기업/종합</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
-        <div id="hospitalGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Cards will be injected here by JS -->
-        </div>
-        
-        <!-- No Results Message -->
-        <div id="noResults" class="hidden text-center py-20">
-            <i class="fa-regular fa-folder-open text-gray-400 text-5xl mb-4"></i>
-            <p class="text-xl text-gray-500">검색 결과가 없습니다.</p>
-        </div>
-    </main>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 z-40 hidden opacity-0 translate-y-4" aria-label="상단으로 이동">
-        <i class="fa-solid fa-arrow-up text-xl"></i>
-    </button>
-
-    <!-- Modal (Recruitment Links) -->
-    <div id="recruitModal" class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-[100]">
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-        
-        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto animate-fade-in-up">
-            <!-- Header -->
-            <div class="modal-content py-4 text-left px-6">
-                <div class="flex justify-between items-center pb-3 border-b">
-                    <p class="text-xl font-bold text-gray-800" id="modalTitle">채용 포털 바로가기</p>
-                    <div class="modal-close cursor-pointer z-50" onclick="closeModal()">
-                        <i class="fa-solid fa-times text-gray-500 hover:text-gray-700 text-xl"></i>
-                    </div>
-                </div>
-
-                <!-- Body -->
-                <div class="my-5 space-y-3">
-                    <div class="bg-blue-50 border border-blue-100 rounded-lg p-3 mb-4">
-                        <p class="text-sm text-blue-800 flex items-center">
-                            <i class="fa-solid fa-circle-info mr-2"></i>
-                            <span>각 사이트에서 <strong class="font-bold">'물리치료사'</strong> 또는 <strong class="font-bold" id="modalHospitalName">병원명</strong>을 검색하세요.</span>
-                        </p>
-                    </div>
-                    
-                    <a href="https://www.goodjobpt.com/job" target="_blank" class="flex items-center justify-between w-full px-4 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition duration-200 border border-gray-200 group hover:border-green-500">
-                        <span class="group-hover:text-green-600 font-medium"><i class="fa-solid fa-user-doctor mr-3 text-green-500"></i> 1) 굿잡피티</span>
-                        <i class="fa-solid fa-external-link-alt text-gray-300 text-xs group-hover:text-green-500"></i>
-                    </a>
-                    
-                    <a href="https://www.saramin.co.kr/zf_user/" target="_blank" class="flex items-center justify-between w-full px-4 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition duration-200 border border-gray-200 group hover:border-blue-500">
-                        <span class="group-hover:text-blue-600 font-medium"><i class="fa-solid fa-briefcase mr-3 text-blue-500"></i> 2) 사람인</span>
-                        <i class="fa-solid fa-external-link-alt text-gray-300 text-xs group-hover:text-blue-500"></i>
-                    </a>
-
-                    <a href="https://www.medijob.cc/" target="_blank" class="flex items-center justify-between w-full px-4 py-3 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition duration-200 border border-gray-200 group hover:border-red-500">
-                        <span class="group-hover:text-red-600 font-medium"><i class="fa-solid fa-stethoscope mr-3 text-red-500"></i> 3) 메디잡</span>
-                        <i class="fa-solid fa-external-link-alt text-gray-300 text-xs group-hover:text-red-500"></i>
-                    </a>
-                </div>
-
-                <!-- Footer -->
-                <div class="flex justify-end pt-2">
-                    <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 text-sm font-medium transition duration-200" onclick="closeModal()">닫기</button>
-                </div>
-            </div>
-        </div>
+<!-- ═══════════ HERO ═══════════ -->
+<header class="relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-40 -right-40 w-[560px] h-[560px] rounded-full opacity-[.10]" style="background:radial-gradient(circle at center,#0d7a6f 0%,transparent 62%)"></div>
+    <div class="absolute -bottom-64 -left-32 w-[640px] h-[640px] rounded-full opacity-[.07]" style="background:radial-gradient(circle at center,#8a7f5c 0%,transparent 60%)"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-14 pb-10 sm:pt-20 sm:pb-14 relative">
+    <div class="reveal in flex items-center gap-2 mb-7">
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-white/70 ring-1 ring-ink-900/10 px-3.5 py-1.5 text-[10.5px] uppercase tracking-[0.22em] font-semibold text-stone-500">
+        <i class="ph-fill ph-pulse text-brand-600 text-sm"></i> PT Career Atlas · ver. 2026
+      </span>
     </div>
+    <h1 class="reveal in text-[2.6rem] leading-[1.06] sm:text-6xl font-extrabold tracking-[-0.035em] text-ink-900" style="text-wrap:balance">
+      물리치료사 취업 지도<span class="text-brand-600">.</span>
+    </h1>
+    <p class="reveal in mt-5 max-w-2xl text-[15.5px] sm:text-[17px] leading-relaxed text-stone-500">
+      수도권(서울·경기·인천) <strong class="text-stone-700 font-semibold">종합병원 전수</strong>와 전국 주요 의료기관, 재활·요양기관까지 —
+      한 화면에서 검색하고, 찜하고, 채용 공고까지 바로 이동하세요.
+    </p>
+    <p class="reveal in mt-3 text-[12.5px] text-stone-400">안산대학교 물리치료학과 심경섭 교수 · 학생 취업 지도용 자료</p>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="mb-2">본 자료는 학생들의 취업 지도를 위해 제작되었습니다.</p>
-            <p class="text-sm text-gray-400">© 2026 Ansan University Dept. of Physical Therapy | Prof. Sim Gyeongseop</p>
+    <!-- stat band : double-bezel -->
+    <div class="reveal in mt-10 rounded-[1.7rem] bg-ink-900/[.045] ring-1 ring-ink-900/[.06] p-1.5 max-w-3xl">
+      <div class="rounded-[calc(1.7rem-0.375rem)] bg-white/85 backdrop-blur-sm ring-1 ring-white/60 shadow-[inset_0_1px_1px_rgba(255,255,255,.8),0_18px_40px_-24px_rgba(28,27,24,.18)] px-6 sm:px-8 py-5 grid grid-cols-2 sm:grid-cols-4 gap-y-4">
+        <div><p class="num text-[26px] font-extrabold tracking-tight text-ink-900" id="statTotal">0</p><p class="text-[11.5px] text-stone-400 mt-0.5">수록 기관 전체</p></div>
+        <div><p class="num text-[26px] font-extrabold tracking-tight text-brand-600" id="statJh">0</p><p class="text-[11.5px] text-stone-400 mt-0.5">수도권 종합병원</p></div>
+        <div><p class="num text-[26px] font-extrabold tracking-tight text-ink-900" id="statSang">0</p><p class="text-[11.5px] text-stone-400 mt-0.5">수도권 상급종합</p></div>
+        <div><p class="num text-[26px] font-extrabold tracking-tight text-ink-900" id="statFav">0</p><p class="text-[11.5px] text-stone-400 mt-0.5">내가 찜한 병원</p></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ CONTROL ISLAND ═══════════ -->
+<div class="sticky top-3 z-40 px-3 sm:px-6">
+  <div class="max-w-7xl mx-auto rounded-[1.4rem] bg-white/80 backdrop-blur-xl ring-1 ring-ink-900/[.07] shadow-[0_18px_44px_-22px_rgba(28,27,24,.22)] px-4 sm:px-6 py-4">
+    <div class="flex flex-col lg:flex-row lg:items-center gap-3">
+      <!-- search -->
+      <div class="relative flex-1 min-w-0">
+        <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-stone-400"></i>
+        <input id="searchInput" type="text" placeholder="병원명 · 지역 · 유형 검색  (예: 수원, 성모, 재활)"
+          class="w-full pl-11 pr-10 py-2.5 rounded-full bg-ink-900/[.04] ring-1 ring-transparent focus:ring-brand-600/40 focus:bg-white text-[14px] placeholder:text-stone-400 transition-all duration-300 outline-none" autocomplete="off">
+        <button id="clearSearch" class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-stone-200/80 hover:bg-stone-300 flex items-center justify-center btn" aria-label="검색어 지우기"><i class="ph ph-x text-[11px] text-stone-500"></i></button>
+      </div>
+      <!-- region segment -->
+      <div class="flex items-center gap-1 rounded-full bg-ink-900/[.04] p-1 w-max" id="regionSeg" role="tablist" aria-label="지역 선택">
+        <button data-region="all" class="seg-btn chip px-4 py-1.5 rounded-full text-[13px] font-semibold bg-ink-900 text-white" role="tab">전체</button>
+        <button data-region="서울" class="seg-btn chip px-4 py-1.5 rounded-full text-[13px] font-medium text-stone-500 hover:text-ink-900" role="tab">서울</button>
+        <button data-region="경기" class="seg-btn chip px-4 py-1.5 rounded-full text-[13px] font-medium text-stone-500 hover:text-ink-900" role="tab">경기</button>
+        <button data-region="인천" class="seg-btn chip px-4 py-1.5 rounded-full text-[13px] font-medium text-stone-500 hover:text-ink-900" role="tab">인천</button>
+        <button data-region="etc" class="seg-btn chip px-4 py-1.5 rounded-full text-[13px] font-medium text-stone-500 hover:text-ink-900" role="tab">그 외</button>
+      </div>
+      <!-- sort + view -->
+      <div class="flex items-center gap-2">
+        <button id="sortBtn" class="btn inline-flex items-center gap-1.5 rounded-full ring-1 ring-ink-900/10 bg-white px-4 py-2 text-[12.5px] font-medium text-stone-500 hover:text-ink-900 hover:ring-ink-900/25" title="정렬 변경">
+          <i class="ph ph-arrows-down-up"></i><span id="sortLabel">지역순</span>
+        </button>
+        <div class="flex rounded-full ring-1 ring-ink-900/10 bg-white p-0.5">
+          <button id="viewCard" class="btn w-8 h-8 rounded-full bg-ink-900 text-white flex items-center justify-center" aria-label="카드 보기" title="카드 보기"><i class="ph ph-squares-four text-[15px]"></i></button>
+          <button id="viewList" class="btn w-8 h-8 rounded-full text-stone-400 hover:text-ink-900 flex items-center justify-center" aria-label="목록 보기" title="목록 보기"><i class="ph ph-list-bullets text-[15px]"></i></button>
         </div>
-    </footer>
+      </div>
+    </div>
+    <!-- category chips -->
+    <div class="mt-3 flex gap-1.5 overflow-x-auto chipbar pb-0.5" id="catBar">
+      <button data-cat="all" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-semibold bg-brand-600 text-white">전체 유형</button>
+      <button data-cat="sang" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25"><i class="ph-fill ph-star text-amber-500 mr-1"></i>상급종합</button>
+      <button data-cat="gen" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25">대학·종합병원</button>
+      <button data-cat="pub" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25">공공·의료원</button>
+      <button data-cat="rehab" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25">재활·요양</button>
+      <button data-cat="plan" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25">개원 예정</button>
+      <button data-cat="fav" class="cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25"><i class="ph-fill ph-heart text-rose-500 mr-1"></i>찜한 병원</button>
+    </div>
+    <!-- city chips (dynamic) -->
+    <div class="hidden mt-2.5 flex gap-1.5 overflow-x-auto chipbar pb-0.5" id="cityBar" aria-label="시·군·구 선택"></div>
+  </div>
+</div>
 
-    <script>
-        // Data Source
-        const hospitals = [
-            // --- 국립대병원 ---
-            { category: "university", type: "국립대", name: "서울대학교병원", location: "서울", home: "https://www.snuh.org/", job: "https://snuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "분당서울대학교병원", location: "성남", home: "https://www.snubh.org/", job: "https://snubh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "부산대학교병원", location: "부산", home: "https://www.pnuh.or.kr/", job: "https://www.pnuh.or.kr/pnuh/recruit/list.do?rbsIdx=307" },
-            { category: "university", type: "국립대", name: "양산부산대학교병원", location: "양산", home: "https://www.pnuyh.or.kr/", job: "https://pnuyh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "경북대학교병원", location: "대구", home: "https://www.knuh.kr/index.asp", job: "https://knuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "칠곡경북대학교병원", location: "대구", home: "https://www.knuch.kr:442/index.asp", job: "https://knuch.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "경상국립대학교병원", location: "진주", home: "https://www.gnuh.co.kr/", job: "https://gnuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "전남대학교병원", location: "광주", home: "https://www.cnuh.com/", job: "https://cnuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "전북대학교병원", location: "전주", home: "https://www.jbuh.co.kr/main.do", job: "https://new.cuh.co.kr/recruit/" },
-            { category: "university", type: "국립대", name: "충남대학교병원", location: "대전", home: "https://www.cnuh.co.kr/", job: "https://cnuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "충북대학교병원", location: "청주", home: "https://www.cbnuh.or.kr/", job: "https://cbnuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "강원대학교병원", location: "춘천", home: "https://www.knuh.or.kr/", job: "https://knuh.recruiter.co.kr/" },
-            { category: "university", type: "국립대", name: "제주대학교병원", location: "제주", home: "https://www.jejunuh.co.kr/", job: "https://jejunuh.recruiter.co.kr/" },
+<!-- ═══════════ MAIN ═══════════ -->
+<main id="main" class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 pb-24 min-h-[60vh]">
+  <div class="flex items-baseline justify-between mb-5 px-0.5">
+    <p class="text-[13px] text-stone-400"><span id="resultCount" class="num font-bold text-ink-900 text-[15px]">0</span> 개 기관</p>
+    <p class="text-[11.5px] text-stone-400 hidden sm:block">단축키 <kbd class="px-1.5 py-0.5 rounded-md bg-white ring-1 ring-ink-900/10 text-[10px] font-semibold">/</kbd> 검색 이동</p>
+  </div>
+  <div id="hospitalGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+  <!-- empty state -->
+  <div id="noResults" class="hidden text-center py-24">
+    <div class="inline-flex w-16 h-16 rounded-[1.3rem] bg-white ring-1 ring-ink-900/[.07] shadow-sm items-center justify-center mb-5"><i class="ph-light ph-binoculars text-3xl text-stone-300"></i></div>
+    <p class="text-lg font-semibold text-stone-500">조건에 맞는 기관이 없습니다</p>
+    <p class="text-[13px] text-stone-400 mt-1.5">검색어를 줄이거나, 지역·유형 필터를 해제해 보세요.</p>
+    <button id="resetAll" class="btn mt-6 inline-flex items-center gap-2 rounded-full bg-ink-900 text-white pl-5 pr-2 py-2 text-[13px] font-semibold">
+      필터 초기화 <span class="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center"><i class="ph ph-arrow-counter-clockwise text-[13px]"></i></span>
+    </button>
+  </div>
+</main>
 
-            // --- 특수목적 ---
-            { category: "public", type: "특수목적", name: "국립재활원", location: "서울", home: "https://www.nrc.go.kr/", job: "https://www.nrc.go.kr/portal/html/content.do?depth=ni&menu_cd=05_03_00_01" },
-            { category: "public", type: "특수목적", name: "국립교통재활병원", location: "양평", home: "https://www.ntrh.or.kr/", job: "https://ntrh.recruiter.co.kr/" },
-            { category: "public", type: "특수목적", name: "근로복지공단 병원", location: "통합", home: "https://www.kcomwel.or.kr/", job: "https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp" },
-            { category: "public", type: "특수목적", name: "근로복지공단 경기요양", location: "화성", home: "https://www.comwel.or.kr/gyeonggi/index.jsp", job: "https://www.kcomwel.or.kr/gyeonggicare/index.jsp" },
-            { category: "public", type: "특수목적", name: "한국보훈복지의료공단", location: "통합", home: "https://www.bohun.or.kr/", job: "https://recruit.bohun.or.kr/" },
-            { category: "public", type: "특수목적", name: "국민건강보험 일산병원", location: "고양", home: "https://www.nhimc.or.kr/", job: "https://knhis.recruiter.co.kr/" },
-            { category: "public", type: "특수목적", name: "국립경찰병원", location: "서울", home: "https://www.nph.go.kr/", job: "https://www.nph.go.kr/nph/html/intro/recruit_01.do?menu_cd=01_05_01_01" },
-            { category: "public", type: "특수목적", name: "국립암센터", location: "고양", home: "https://www.ncc.re.kr/", job: "https://ncc.recruiter.co.kr/" },
-            { category: "public", type: "특수목적", name: "대한적십자사 병원", location: "통합", home: "https://www.rch.or.kr/web/main/main", job: "https://www.redcross.or.kr/recruit/" },
-            { category: "public", type: "특수목적", name: "한국원자력의학원", location: "서울", home: "https://www.kirams.re.kr/", job: "https://kirams.recruiter.co.kr/" },
+<!-- ═══════════ MODAL ═══════════ -->
+<div id="recruitModal" class="modal-wrap fixed inset-0 z-[70] flex items-end sm:items-center justify-center opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-overlay absolute inset-0 bg-ink-900/45 backdrop-blur-sm"></div>
+  <div class="modal-panel relative w-full sm:max-w-md mx-0 sm:mx-4 mb-0 sm:mb-0 rounded-t-[1.8rem] sm:rounded-[1.8rem] bg-ink-900/[.05] ring-1 ring-ink-900/10 p-1.5">
+    <div class="rounded-t-[calc(1.8rem-0.375rem)] sm:rounded-[calc(1.8rem-0.375rem)] bg-white shadow-[inset_0_1px_1px_rgba(255,255,255,.9)] max-h-[82dvh] overflow-y-auto">
+      <div class="px-6 pt-6 pb-2 flex items-start justify-between">
+        <div>
+          <p class="text-[10.5px] uppercase tracking-[0.2em] font-semibold text-stone-400 mb-1">Recruit</p>
+          <h2 id="modalTitle" class="text-[19px] font-extrabold tracking-tight text-ink-900">채용 정보 바로가기</h2>
+          <p id="modalSub" class="text-[12.5px] text-stone-400 mt-1"></p>
+        </div>
+        <button onclick="closeModal()" class="btn w-9 h-9 rounded-full bg-ink-900/[.05] hover:bg-ink-900/10 flex items-center justify-center" aria-label="닫기"><i class="ph ph-x text-stone-500"></i></button>
+      </div>
+      <div class="px-6 pb-6 pt-2 space-y-2" id="modalLinks"></div>
+    </div>
+  </div>
+</div>
 
-            // --- 권역재활 ---
-            { category: "rehab", type: "권역재활", name: "경북권역재활병원", location: "경산", home: "http://www.grrh.or.kr/", job: "http://www.grrh.or.kr/main/bbs/index.do?menu_idx=32&master_idx=3" },
-            { category: "rehab", type: "권역재활", name: "제주권역재활병원", location: "서귀포", home: "https://jrh.or.kr/", job: "https://jrh.or.kr/employment?category=" },
-            { category: "rehab", type: "권역재활", name: "강원권역재활병원", location: "춘천", home: "http://www.grh.or.kr/", job: "http://www.grh.or.kr/main/board/list.do?menu_idx=37&manage_idx=15" },
-            { category: "rehab", type: "권역재활", name: "호남권역재활병원", location: "광주", home: "https://honamhosp.or.kr/", job: "https://honamhosp.or.kr/bbs/board.php?bo_table=6040" },
-            { category: "rehab", type: "권역재활", name: "경인권역재활병원", location: "인천", home: "https://www.rch.or.kr/web/rchkyungin/main", job: "https://www.rch.or.kr/web/rchkyungin/bbs/employment" },
+<!-- scroll to top -->
+<button id="scrollToTopBtn" class="btn fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-ink-900 text-white shadow-[0_16px_32px_-12px_rgba(28,27,24,.4)] hidden items-center justify-center hover:bg-ink-900/90" aria-label="맨 위로">
+  <i class="ph ph-arrow-up text-lg"></i>
+</button>
 
-            // --- 서울시립 ---
-            { category: "rehab", type: "시립병원", name: "서울특별시 서남병원", location: "서울", home: "https://www.seoulsnh.or.kr/", job: "https://www.seoulsnh.or.kr/main/contents.do?menuNo=200028" },
-            { category: "public", type: "시립병원", name: "서울특별시 보라매병원", location: "서울", home: "https://www.brmh.org/", job: "https://brmh.recruiter.co.kr/" },
-            { category: "rehab", type: "시립병원", name: "서울특별시 어린이병원", location: "서울", home: "https://childhosp.seoul.go.kr/", job: "https://childhosp.seoul.go.kr/news/recruit" },
-            { category: "rehab", type: "시립병원", name: "서울특별시 동부병원", location: "서울", home: "https://www.dbhosp.go.kr/", job: "https://www.dbhosp.go.kr/home/sub.php?menukey=293" },
-            { category: "rehab", type: "시립병원", name: "서울특별시 북부병원", location: "서울", home: "https://www.seoulnmh.net/", job: "https://www.bbhosp.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104003000000" },
-            { category: "rehab", type: "시립병원", name: "서울특별시 서북병원", location: "서울", home: "https://sbhosp.seoul.go.kr/", job: "https://sbhosp.seoul.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104001000000" },
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="border-t border-ink-900/[.06] bg-white/60">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 py-12">
+    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-8">
+      <div class="max-w-xl">
+        <p class="flex items-center gap-2 font-extrabold tracking-tight text-ink-900"><i class="ph-fill ph-pulse text-brand-600"></i> PT Career Atlas</p>
+        <p class="mt-3 text-[12.5px] leading-relaxed text-stone-400">
+          본 자료는 학생 취업 지도를 위해 제작되었습니다. 상급종합병원은 보건복지부 <b class="text-stone-500">제5기 지정(2024–2026)</b> 기준,
+          수도권 종합병원 명단은 <b class="text-stone-500">건강보험심사평가원 자료 기준(서울 2026.5 · 경기 2025.10 · 인천 2026.6)</b>의 공개 정리본을 대조하여 수록했습니다.
+          기관 종별·홈페이지·채용 링크는 변동될 수 있으므로 지원 전 반드시 해당 기관 공고를 확인하세요. 미확인 홈페이지는 네이버 검색으로 연결됩니다.
+        </p>
+      </div>
+      <div class="text-[12.5px] text-stone-400 sm:text-right">
+        <p class="font-semibold text-stone-500">안산대학교 물리치료학과</p>
+        <p class="mt-1">심경섭 교수 · ver. 2026</p>
+        <p class="mt-4 text-[11.5px]">© 2026 Ansan University Dept. of Physical Therapy</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-            // --- 지방의료원 ---
-            { category: "public", type: "지방의료원", name: "서울의료원", location: "서울", home: "https://www.seoulmc.or.kr/", job: "https://www.seoulmc.or.kr/pms/board/list.do?boardidn=216&menucdv=06030000" },
-            { category: "public", type: "지방의료원", name: "인천광역시의료원", location: "인천", home: "https://www.icmc.or.kr/", job: "https://icmc.recruiter.co.kr/" },
-            { category: "public", type: "지방의료원", name: "경기도의료원 (통합)", location: "경기", home: "https://www.medical.or.kr/", job: "https://medical.saramin.co.kr/" },
-            { category: "public", type: "지방의료원", name: "성남시의료원", location: "성남", home: "https://www.scmc.kr/", job: "https://www.scmc.kr/home/index.do?menu_code=05020200" },
-            { category: "public", type: "지방의료원", name: "부산광역시의료원", location: "부산", home: "https://www.busanmc.or.kr/", job: "https://www.busanmc.or.kr/busanmc/index.php?pCode=recruit" },
-            { category: "public", type: "지방의료원", name: "마산의료원", location: "창원", home: "https://www.mmc.or.kr/", job: "https://www.mmc.or.kr/board/list.do?boardId=BBS_0000021" },
-            { category: "public", type: "지방의료원", name: "대구의료원", location: "대구", home: "https://www.daegumc.co.kr/", job: "https://www.daegumc.co.kr/content/01about/07_01.php" },
-            { category: "public", type: "지방의료원", name: "포항의료원", location: "포항", home: "https://pmc.or.kr/front/main.do", job: "http://www.phmed.or.kr/content/05community/03_01.php" },
-            { category: "public", type: "지방의료원", name: "안동의료원", location: "안동", home: "https://amc.or.kr/", job: "https://amc.or.kr/board/list.do?mnuid=060401" },
-            { category: "public", type: "지방의료원", name: "김천의료원", location: "김천", home: "https://gcmc.or.kr/", job: "https://gcmc.or.kr/board/list.do?mnuid=060401" },
-            { category: "public", type: "지방의료원", name: "울진군의료원", location: "울진", home: "http://www.umc.or.kr/", job: "http://www.umc.or.kr/index.php?page=html&mc=0603" },
-            { category: "public", type: "지방의료원", name: "원주의료원", location: "원주", home: "https://kwmc.or.kr/", job: "https://kwmc.or.kr/comm/recruit.html" },
-            { category: "public", type: "지방의료원", name: "강릉의료원", location: "강릉", home: "https://www.gnmc.or.kr/", job: "https://www.gnmc.or.kr/gnmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
-            { category: "public", type: "지방의료원", name: "속초의료원", location: "속초", home: "https://www.sokchomc.co.kr/", job: "https://www.sokchomc.or.kr/sokchomc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "삼척의료원", location: "삼척", home: "https://www.ksmc.or.kr/", job: "https://www.samcheokmc.or.kr/samcheokmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "영월의료원", location: "영월", home: "https://www.youngwol.org/", job: "https://www.youngwol.org/youngwol/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "청주의료원", location: "청주", home: "http://www.cjmc.or.kr/", job: "http://www.cjmc.or.kr/home/sub.php?menukey=138" },
-            { category: "public", type: "지방의료원", name: "충주의료원", location: "충주", home: "http://www.cbmc.or.kr/", job: "http://www.cbmc.or.kr/home/sub.php?menukey=306" },
-            { category: "public", type: "지방의료원", name: "천안의료원", location: "천안", home: "http://www.camc.or.kr/", job: "http://www.camc.or.kr/home/sub.php?menukey=137" },
-            { category: "public", type: "지방의료원", name: "공주의료원", location: "공주", home: "https://gjmc.or.kr/", job: "https://gjmc.or.kr/gjmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000" },
-            { category: "public", type: "지방의료원", name: "서산의료원", location: "서산", home: "https://www.seosanmc.or.kr/", job: "https://www.seosanmc.or.kr/seosanmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000" },
-            { category: "public", type: "지방의료원", name: "홍성의료원", location: "홍성", home: "http://www.hsmc.or.kr/", job: "http://www.hsmc.or.kr/home/sub.php?menukey=210" },
-            { category: "public", type: "지방의료원", name: "군산의료원", location: "군산", home: "https://www.kunmed.or.kr/", job: "https://www.kunmed.or.kr/board/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "지방의료원", name: "남원의료원", location: "남원", home: "http://www.namwonmed.or.kr/", job: "http://www.namwonmed.or.kr/content/hire_notice" },
-            { category: "public", type: "지방의료원", name: "진안군의료원", location: "진안", home: "https://www.jgmc.kr/", job: "http://www.jnmc.or.kr/board/list.asp?board_id=recruit_01" },
-            { category: "public", type: "지방의료원", name: "목포시의료원", location: "목포", home: "https://www.mokpomc.or.kr/", job: "https://www.mokpomc.com/bbs/board.php?bo_table=recruit" },
-            { category: "public", type: "지방의료원", name: "순천의료원", location: "순천", home: "https://jsmc.or.kr/", job: "http://www.scmc.or.kr/sub6_2.php" },
-            { category: "public", type: "지방의료원", name: "강진의료원", location: "강진", home: "http://www.gjmed.or.kr/", job: "http://www.gjmed.or.kr/home/sub.php?menukey=142" },
-            { category: "public", type: "지방의료원", name: "제주의료원", location: "제주", home: "https://www.jejumed.com/", job: "https://www.jejumed.com/skyboard/notice_03" },
-            { category: "public", type: "지방의료원", name: "서귀포의료원", location: "서귀포", home: "https://www.jjsmc.or.kr/", job: "https://www.jjsmc.or.kr/m/bbs/board.php?bo_table=4_5_1_1" },
+<script>
+/* ═════════════════════════════════════════════════════════════
+   DATA — r:지역, c:시·군·구, n:기관명, t:종별 라벨, cat:필터 분류
+   jh:1 = 수도권 '종합병원'(상급종합 포함) 전수 카운트 대상
+   home/job 미기재 시 네이버 검색·지도 링크 자동 생성
+   ═════════════════════════════════════════════════════════════ */
+const hospitals = [
+// ─── 서울 · 상급종합병원 14 ───
+{r:'서울',c:'종로구',n:'서울대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.snuh.org/',job:'https://snuh.recruiter.co.kr/'},
+{r:'서울',c:'강남구',n:'삼성서울병원',t:'상급종합',cat:'sang',jh:1,home:'http://www.samsunghospital.com/',job:'https://recruit.samsunghospital.com/'},
+{r:'서울',c:'송파구',n:'서울아산병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.amc.seoul.kr/',job:'https://recruit.amc.seoul.kr/'},
+{r:'서울',c:'서대문구',n:'세브란스병원',t:'상급종합',cat:'sang',jh:1,home:'https://sev.severance.healthcare/',job:'https://yuhs.recruiter.co.kr/'},
+{r:'서울',c:'강남구',n:'강남세브란스병원',t:'상급종합',cat:'sang',jh:1,job:'https://yuhs.recruiter.co.kr/'},
+{r:'서울',c:'서초구',n:'가톨릭대 서울성모병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.cmc.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'서울',c:'종로구',n:'강북삼성병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.kbsmc.co.kr/',job:'https://kbsmc.recruiter.co.kr/'},
+{r:'서울',c:'동대문구',n:'경희대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.khmc.or.kr/',job:'https://khmc.recruiter.co.kr/'},
+{r:'서울',c:'성북구',n:'고려대 안암병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.kumc.or.kr/',job:'https://kumc.recruiter.co.kr/'},
+{r:'서울',c:'구로구',n:'고려대 구로병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.kumc.or.kr/',job:'https://kumc.recruiter.co.kr/'},
+{r:'서울',c:'광진구',n:'건국대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.kuh.ac.kr/',job:'https://kuh.recruiter.co.kr/'},
+{r:'서울',c:'동작구',n:'중앙대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://ch.cauhs.or.kr/',job:'https://caumc.recruiter.co.kr/'},
+{r:'서울',c:'성동구',n:'한양대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.hyumc.com/',job:'https://recruit.hyumc.com/'},
+{r:'서울',c:'양천구',n:'이화여대 목동병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.eumc.ac.kr/',job:'https://eumc.recruiter.co.kr/'},
+// ─── 서울 · 종합병원 ───
+{r:'서울',c:'강남구',n:'강남을지대학교병원',t:'대학병원',cat:'gen',jh:1,home:'http://www.eulji.or.kr/',job:'https://eulji.recruiter.co.kr/'},
+{r:'서울',c:'강남구',n:'강남베드로병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'강남구',n:'우리들병원',t:'종합병원',cat:'gen',jh:1,home:'https://wooridul.co.kr/',job:'https://wooridul.co.kr/'},
+{r:'서울',c:'강남구',n:'차의과학대 강남차병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.chamc.co.kr/',job:'https://recruit.chamc.co.kr/'},
+{r:'서울',c:'강동구',n:'강동경희대학교병원',t:'대학병원',cat:'gen',jh:1,job:'https://khmc.recruiter.co.kr/'},
+{r:'서울',c:'강동구',n:'한림대 강동성심병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'서울',c:'강동구',n:'중앙보훈병원',t:'공공(보훈)',cat:'pub',jh:1,home:'https://www.bohun.or.kr/',job:'https://recruit.bohun.or.kr/'},
+{r:'서울',c:'강북구',n:'대한병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'강북구',n:'서울현대병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'강서구',n:'미즈메디병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'강서구',n:'이화여대 서울병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.eumc.ac.kr/',job:'https://eumc.recruiter.co.kr/'},
+{r:'서울',c:'강서구',n:'서울부민병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.bumin.co.kr/'},
+{r:'서울',c:'관악구',n:'에이치플러스 양지병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.newyjh.com/main/index.htm',job:'https://new.hyangji.co.kr/intro/recruit.php'},
+{r:'서울',c:'광진구',n:'혜민병원',t:'종합병원',cat:'gen',jh:1,home:'http://www.e-hyemin.co.kr/',job:'http://www.e-hyemin.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'구로구',n:'구로성심병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'금천구',n:'희명병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'노원구',n:'노원을지대학교병원',t:'대학병원',cat:'gen',jh:1,home:'http://www.eulji.or.kr/',job:'https://eulji.recruiter.co.kr/'},
+{r:'서울',c:'노원구',n:'인제대 상계백병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.paik.ac.kr/',job:'https://paik.recruiter.co.kr/'},
+{r:'서울',c:'노원구',n:'원자력병원(한국원자력의학원)',t:'공공·특수',cat:'pub',jh:1,home:'https://www.kirams.re.kr/',job:'https://kirams.recruiter.co.kr/'},
+{r:'서울',c:'도봉구',n:'한전의료재단 한일병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'동대문구',n:'삼육서울병원',t:'종합병원',cat:'gen',jh:1,home:'https://symcs.co.kr/',job:'https://symcs.co.kr/board/list.html?code=recruit'},
+{r:'서울',c:'동대문구',n:'서울성심병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'동대문구',n:'서울특별시 동부병원',t:'시립병원',cat:'pub',jh:1,home:'https://www.dbhosp.go.kr/',job:'https://www.dbhosp.go.kr/home/sub.php?menukey=293'},
+{r:'서울',c:'동작구',n:'서울특별시 보라매병원',t:'시립병원',cat:'pub',jh:1,home:'https://www.brmh.org/',job:'https://brmh.recruiter.co.kr/'},
+{r:'서울',c:'서대문구',n:'동신병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'서초구',n:'기쁨병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'성동구',n:'베스티안 서울병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'송파구',n:'국립경찰병원',t:'공공·특수',cat:'pub',jh:1,home:'https://www.nph.go.kr/',job:'https://www.nph.go.kr/nph/html/intro/recruit_01.do?menu_cd=01_05_01_01'},
+{r:'서울',c:'양천구',n:'서울특별시 서남병원',t:'시립병원',cat:'pub',jh:1,home:'https://www.seoulsnh.or.kr/',job:'https://www.seoulsnh.or.kr/main/contents.do?menuNo=200028'},
+{r:'서울',c:'양천구',n:'홍익병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'영등포구',n:'씨엠병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'영등포구',n:'가톨릭대 여의도성모병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.cmc.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'서울',c:'영등포구',n:'대림성모병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'영등포구',n:'명지성모병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'영등포구',n:'성애병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'영등포구',n:'한림대 강남성심병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'서울',c:'영등포구',n:'한림대 한강성심병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'서울',c:'용산구',n:'소화병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'용산구',n:'순천향대학교 서울병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.schmc.ac.kr/',job:'https://schmc.recruiter.co.kr/'},
+{r:'서울',c:'은평구',n:'가톨릭대 은평성모병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.cmc.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'서울',c:'은평구',n:'서울특별시 서북병원',t:'시립병원',cat:'pub',jh:1,home:'https://sbhosp.seoul.go.kr/',job:'https://sbhosp.seoul.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104001000000'},
+{r:'서울',c:'은평구',n:'서울특별시 은평병원',t:'시립병원',cat:'pub',jh:1},
+{r:'서울',c:'은평구',n:'청구성심병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'종로구',n:'국군서울지구병원',t:'군 병원',cat:'pub',jh:1},
+{r:'서울',c:'종로구',n:'세란병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'종로구',n:'서울적십자병원',t:'공공(적십자)',cat:'pub',jh:1,home:'https://www.rch.or.kr/web/main/main',job:'https://www.redcross.or.kr/recruit/'},
+{r:'서울',c:'중구',n:'국립중앙의료원',t:'국립',cat:'pub',jh:1},
+{r:'서울',c:'중랑구',n:'녹색병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'중랑구',n:'동부제일병원',t:'종합병원',cat:'gen',jh:1},
+{r:'서울',c:'중랑구',n:'서울특별시 서울의료원',t:'시립병원',cat:'pub',jh:1,home:'https://www.seoulmc.or.kr/',job:'https://www.seoulmc.or.kr/pms/board/list.do?boardidn=216&menucdv=06030000'},
+// ─── 서울 · 시립/특수·재활 (종합병원 외) ───
+{r:'서울',c:'광진구',n:'서울특별시 어린이병원',t:'시립병원',cat:'rehab',home:'https://childhosp.seoul.go.kr/',job:'https://childhosp.seoul.go.kr/news/recruit'},
+{r:'서울',c:'중랑구',n:'서울특별시 북부병원',t:'시립병원',cat:'rehab',home:'https://www.seoulnmh.net/',job:'https://www.bbhosp.go.kr/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000104003000000'},
+{r:'서울',c:'강북구',n:'국립재활원',t:'국립·재활',cat:'pub',home:'https://www.nrc.go.kr/',job:'https://www.nrc.go.kr/portal/html/content.do?depth=ni&menu_cd=05_03_00_01'},
+// ─── 경기 · 상급종합병원 6 ───
+{r:'경기',c:'성남시',n:'분당서울대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.snubh.org/',job:'https://snubh.recruiter.co.kr/'},
+{r:'경기',c:'수원시',n:'아주대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://hosp.ajoumc.or.kr/',job:'https://ajoumc.recruiter.co.kr/'},
+{r:'경기',c:'수원시',n:'가톨릭대 성빈센트병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.cmcvincent.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'경기',c:'안양시',n:'한림대학교성심병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'경기',c:'안산시',n:'고려대 안산병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.kumc.or.kr/',job:'https://kumc.recruiter.co.kr/'},
+{r:'경기',c:'부천시',n:'순천향대학교 부천병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.schmc.ac.kr/',job:'https://schmc.recruiter.co.kr/'},
+// ─── 경기 · 종합병원 ───
+{r:'경기',c:'고양시',n:'국립암센터',t:'국립·특수',cat:'pub',jh:1,home:'https://www.ncc.re.kr/',job:'https://ncc.recruiter.co.kr/'},
+{r:'경기',c:'고양시',n:'국민건강보험 일산병원',t:'공공·특수',cat:'pub',jh:1,home:'https://www.nhimc.or.kr/',job:'https://knhis.recruiter.co.kr/'},
+{r:'경기',c:'고양시',n:'동국대학교 일산병원',t:'대학병원',cat:'gen',jh:1,home:'http://www.dumc.or.kr/index00.jsp',job:'https://dumc.recruiter.co.kr/'},
+{r:'경기',c:'고양시',n:'인제대 일산백병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.paik.ac.kr/',job:'https://paik.recruiter.co.kr/'},
+{r:'경기',c:'고양시',n:'명지병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.mjh.or.kr/',job:'https://mjh.recruiter.co.kr/'},
+{r:'경기',c:'고양시',n:'차의과학대 일산차병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.chamc.co.kr/',job:'https://recruit.chamc.co.kr/'},
+{r:'경기',c:'고양시',n:'더자인병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'광명시',n:'광명성애병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'광명시',n:'중앙대학교광명병원',t:'대학병원',cat:'gen',jh:1,home:'https://ch.cauhs.or.kr/',job:'https://caumc.recruiter.co.kr/'},
+{r:'경기',c:'광주시',n:'참조은병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'구리시',n:'한양대학교 구리병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.hyumc.com/',job:'https://recruit.hyumc.com/'},
+{r:'경기',c:'군포시',n:'원광대학교 산본병원',t:'대학병원',cat:'gen',jh:1},
+{r:'경기',c:'군포시',n:'지샘병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'김포시',n:'김포우리병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'김포시',n:'뉴고려병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'남양주시',n:'남양주한양병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'남양주시',n:'현대병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'부천시',n:'가톨릭대 부천성모병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.cmc.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'경기',c:'부천시',n:'부천세종병원',t:'종합병원',cat:'gen',jh:1,home:'https://sejongh.co.kr/',job:'https://sejongh.recruiter.co.kr/'},
+{r:'경기',c:'부천시',n:'뉴대성병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'부천시',n:'부천우리병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'부천시',n:'다니엘종합병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'성남시',n:'국군수도병원',t:'군 병원',cat:'pub',jh:1},
+{r:'경기',c:'성남시',n:'분당제생병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.dmc.or.kr/',job:'https://www.dmc.or.kr/portal/board/list/B0000030.do?menuNo=20503000'},
+{r:'경기',c:'성남시',n:'성남시의료원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.scmc.kr/',job:'https://www.scmc.kr/home/index.do?menu_code=05020200'},
+{r:'경기',c:'성남시',n:'성남중앙병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'성남시',n:'정병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'성남시',n:'차의과학대 분당차병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.chamc.co.kr/',job:'https://recruit.chamc.co.kr/'},
+{r:'경기',c:'수원시',n:'동수원병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'수원시',n:'수원덕산병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'수원시',n:'수원화홍병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'수원시',n:'경기도의료원 수원병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'수원시',n:'윌스기념병원',t:'종합병원',cat:'gen',jh:1,home:'https://allspine.com/',job:'https://allspine.com/member/recruit.html'},
+{r:'경기',c:'시흥시',n:'시화병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'시흥시',n:'신천연합병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'시흥시',n:'센트럴병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안산시',n:'단원병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안산시',n:'한도병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안산시',n:'근로복지공단 안산병원',t:'공공(산재)',cat:'pub',jh:1,home:'https://www.kcomwel.or.kr/',job:'https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp'},
+{r:'경기',c:'안산시',n:'사랑의병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안성시',n:'경기도의료원 안성병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'안성시',n:'안성성모병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안양시',n:'메트로병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'안양시',n:'안양샘병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'여주시',n:'세종여주병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'오산시',n:'오산한국병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'용인시',n:'강남병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'용인시',n:'연세대 용인세브란스병원',t:'대학병원',cat:'gen',jh:1,job:'https://yuhs.recruiter.co.kr/'},
+{r:'경기',c:'용인시',n:'다보스병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'용인시',n:'메디필드한강병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'의정부시',n:'가톨릭대 의정부성모병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.cmc.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+{r:'경기',c:'의정부시',n:'경기도의료원 의정부병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'의정부시',n:'의정부백병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'의정부시',n:'의정부을지대학교병원',t:'대학병원',cat:'gen',jh:1,home:'http://www.eulji.or.kr/',job:'https://eulji.recruiter.co.kr/'},
+{r:'경기',c:'의정부시',n:'의정부 서울척병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'의정부시',n:'추병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'이천시',n:'경기도의료원 이천병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'파주시',n:'경기도의료원 파주병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'파주시',n:'메디인병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'평택시',n:'박병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'평택시',n:'박애병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'평택시',n:'평택성모병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'평택시',n:'굿모닝병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'포천시',n:'강병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'포천시',n:'경기도의료원 포천병원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.medical.or.kr/',job:'https://medical.saramin.co.kr/'},
+{r:'경기',c:'포천시',n:'포천우리병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'화성시',n:'원광종합병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'화성시',n:'화성중앙종합병원',t:'종합병원',cat:'gen',jh:1},
+{r:'경기',c:'화성시',n:'한림대 동탄성심병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'경기',c:'화성시',n:'화성유일병원',t:'종합병원',cat:'gen',jh:1},
+// ─── 인천 · 상급종합병원 3 ───
+{r:'인천',c:'남동구',n:'가천대 길병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.gilhospital.com/',job:'https://recruit.gilhospital.com/'},
+{r:'인천',c:'중구',n:'인하대학교병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.inha.com/',job:'https://inha.recruiter.co.kr/'},
+{r:'인천',c:'부평구',n:'가톨릭대 인천성모병원',t:'상급종합',cat:'sang',jh:1,home:'https://www.cmcism.or.kr/',job:'https://recruit.cmcnu.or.kr/'},
+// ─── 인천 · 종합병원 ───
+{r:'인천',c:'계양구',n:'인천세종병원',t:'종합병원',cat:'gen',jh:1,home:'https://incheon.sejongh.co.kr/',job:'https://sejongh.recruiter.co.kr/'},
+{r:'인천',c:'계양구',n:'한림병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'남동구',n:'인천힘찬종합병원',t:'종합병원',cat:'gen',jh:1,home:'https://himchanhospital.com/',job:'https://himchanhospital.com/intro/recruit.php'},
+{r:'인천',c:'남동구',n:'대찬병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'남동구',n:'국제바로병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'미추홀구',n:'인천보훈병원',t:'공공(보훈)',cat:'pub',jh:1,home:'https://www.bohun.or.kr/',job:'https://recruit.bohun.or.kr/'},
+{r:'인천',c:'미추홀구',n:'인천사랑병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'미추홀구',n:'현대유비스병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'미추홀구',n:'더나눔병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'동구',n:'인천광역시의료원',t:'지방의료원',cat:'pub',jh:1,home:'https://www.icmc.or.kr/',job:'https://icmc.recruiter.co.kr/'},
+{r:'인천',c:'동구',n:'인천백병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'부평구',n:'근로복지공단 인천병원',t:'공공(산재)',cat:'pub',jh:1,home:'https://www.kcomwel.or.kr/',job:'https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp'},
+{r:'인천',c:'부평구',n:'세림병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'서구',n:'가톨릭관동대 국제성모병원',t:'대학병원',cat:'gen',jh:1,home:'https://www.ish.or.kr/',job:'https://recruit.ish.or.kr/'},
+{r:'인천',c:'서구',n:'검단탑병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'서구',n:'나은병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.luga.co.kr/',job:'http://www.naeun.co.kr/intro/intro_09.php'},
+{r:'인천',c:'서구',n:'뉴 성민병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'서구',n:'온누리병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'연수구',n:'나사렛국제병원',t:'종합병원',cat:'gen',jh:1,home:'http://www.nasaret.co.kr/',job:'http://www.nasaret.co.kr/about/about07.html'},
+{r:'인천',c:'연수구',n:'인천적십자병원',t:'공공(적십자)',cat:'pub',jh:1,home:'https://www.rch.or.kr/web/main/main',job:'https://www.redcross.or.kr/recruit/'},
+{r:'인천',c:'중구',n:'가천대 동인천길병원',t:'대학병원',cat:'gen',jh:1,job:'https://recruit.gilhospital.com/'},
+{r:'인천',c:'중구',n:'인천기독병원',t:'종합병원',cat:'gen',jh:1,home:'https://www.goich.co.kr/',job:'http://www.ich.or.kr/bbs/board.php?bo_table=recruit'},
+{r:'인천',c:'강화군',n:'비에스종합병원',t:'종합병원',cat:'gen',jh:1},
+{r:'인천',c:'옹진군',n:'백령병원',t:'종합병원',cat:'gen',jh:1},
+// ─── 인천/경기 · 기타 의료기관 (종합병원 외) ───
+{r:'인천',c:'미추홀구',n:'인천효성병원',t:'병원',cat:'gen',home:'http://www.hshospital.co.kr/',job:'http://www.hshospital.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'수원시',n:'수원센텀병원',t:'병원',cat:'gen',home:'http://suwoncentum.com/',job:'http://www.centumhosp.com/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'양평군',n:'국립교통재활병원',t:'국립·재활',cat:'pub',home:'https://www.ntrh.or.kr/',job:'https://ntrh.recruiter.co.kr/'},
+{r:'인천',c:'연수구',n:'경인권역재활병원',t:'권역재활',cat:'rehab',home:'https://www.rch.or.kr/web/rchkyungin/main',job:'https://www.rch.or.kr/web/rchkyungin/bbs/employment'},
+// ─── 개원 예정 (수도권) ───
+{r:'인천',c:'서구',n:'서울아산 청라병원',t:'개원 예정',cat:'plan'},
+{r:'인천',c:'연수구',n:'연세대 송도세브란스병원',t:'개원 예정',cat:'plan'},
+{r:'경기',c:'시흥시',n:'배곧서울대학교병원',t:'건축 중',cat:'plan'},
+{r:'경기',c:'동두천시',n:'동두천제생병원',t:'건축 중',cat:'plan'},
+{r:'경기',c:'하남시',n:'연세하남병원',t:'개원 예정',cat:'plan'},
+{r:'경기',c:'의왕시',n:'의왕해밀리병원',t:'2029 예정',cat:'plan'},
+{r:'경기',c:'남양주시',n:'중앙대 남양주병원',t:'2030 예정',cat:'plan'},
+{r:'경기',c:'김포시',n:'인하대 김포병원',t:'2031 예정',cat:'plan'},
+{r:'경기',c:'평택시',n:'아주대 평택병원',t:'추진 중',cat:'plan'},
+// ─── 그 외 지역 · 국립대병원 ───
+{r:'부산',c:'부산',n:'부산대학교병원',t:'상급종합',cat:'sang',home:'https://www.pnuh.or.kr/',job:'https://www.pnuh.or.kr/pnuh/recruit/list.do?rbsIdx=307'},
+{r:'경남',c:'양산시',n:'양산부산대학교병원',t:'상급종합',cat:'sang',home:'https://www.pnuyh.or.kr/',job:'https://pnuyh.recruiter.co.kr/'},
+{r:'대구',c:'대구',n:'경북대학교병원',t:'상급종합',cat:'sang',home:'https://www.knuh.kr/index.asp',job:'https://knuh.recruiter.co.kr/'},
+{r:'대구',c:'대구',n:'칠곡경북대학교병원',t:'상급종합',cat:'sang',home:'https://www.knuch.kr:442/index.asp',job:'https://knuch.recruiter.co.kr/'},
+{r:'경남',c:'진주시',n:'경상국립대학교병원',t:'상급종합',cat:'sang',home:'https://www.gnuh.co.kr/',job:'https://gnuh.recruiter.co.kr/'},
+{r:'광주',c:'광주',n:'전남대학교병원',t:'상급종합',cat:'sang',home:'https://www.cnuh.com/',job:'https://cnuh.recruiter.co.kr/'},
+{r:'전북',c:'전주시',n:'전북대학교병원',t:'상급종합',cat:'sang',home:'https://www.jbuh.co.kr/main.do',job:'https://new.cuh.co.kr/recruit/'},
+{r:'대전',c:'대전',n:'충남대학교병원',t:'상급종합',cat:'sang',home:'https://www.cnuh.co.kr/',job:'https://cnuh.recruiter.co.kr/'},
+{r:'충북',c:'청주시',n:'충북대학교병원',t:'상급종합',cat:'sang',home:'https://www.cbnuh.or.kr/',job:'https://cbnuh.recruiter.co.kr/'},
+{r:'강원',c:'춘천시',n:'강원대학교병원',t:'대학병원',cat:'gen',home:'https://www.knuh.or.kr/',job:'https://knuh.recruiter.co.kr/'},
+{r:'제주',c:'제주시',n:'제주대학교병원',t:'대학병원',cat:'gen',home:'https://www.jejunuh.co.kr/',job:'https://jejunuh.recruiter.co.kr/'},
+// ─── 그 외 지역 · 사립대병원 ───
+{r:'강원',c:'원주시',n:'원주세브란스기독병원',t:'상급종합',cat:'sang',home:'https://www.ywmc.or.kr/web/www/home',job:'https://ywmc.recruiter.co.kr/'},
+{r:'강원',c:'춘천시',n:'한림대 춘천성심병원',t:'대학병원',cat:'gen',home:'https://chuncheon.hallym.or.kr/',job:'https://recruit.hallym.or.kr/'},
+{r:'대구',c:'대구',n:'영남대학교병원',t:'상급종합',cat:'sang',home:'https://yumc.ac.kr/',job:'https://yumc.recruiter.co.kr/'},
+{r:'대구',c:'대구',n:'계명대 동산의료원',t:'상급종합',cat:'sang',home:'https://www.dsmc.or.kr/',job:'https://new.dsmc.or.kr/content/01about/08_01.php'},
+{r:'대구',c:'대구',n:'대구가톨릭대학교병원',t:'상급종합',cat:'sang',home:'https://www.dcmc.co.kr/',job:'https://www.dcmc.co.kr/content/06/060100.asp'},
+{r:'울산',c:'울산',n:'울산대학교병원',t:'상급종합',cat:'sang',home:'https://www.uuh.ulsan.kr/',job:'https://uuh.recruiter.co.kr/'},
+{r:'부산',c:'부산',n:'동아대학교병원',t:'상급종합',cat:'sang',home:'https://www.damc.or.kr/',job:'https://www.damc.or.kr/04/01_list.php'},
+{r:'부산',c:'부산',n:'고신대복음병원',t:'상급종합',cat:'sang',home:'https://www.kosinmed.or.kr/',job:'https://www.kosinmed.or.kr/intro/intro_05.html'},
+{r:'부산',c:'부산',n:'인제대 부산백병원',t:'상급종합',cat:'sang',home:'https://www.paik.ac.kr/',job:'https://paik.recruiter.co.kr/'},
+{r:'부산',c:'부산',n:'인제대 해운대백병원',t:'대학병원',cat:'gen',home:'https://www.paik.ac.kr/haeundae/',job:'https://paik.recruiter.co.kr/'},
+{r:'광주',c:'광주',n:'조선대학교병원',t:'상급종합',cat:'sang',home:'https://hosp.chosun.ac.kr/',job:'https://hosp.chosun.ac.kr/board/list.html?code=b_employ'},
+{r:'전북',c:'익산시',n:'원광대학교병원',t:'상급종합',cat:'sang',home:'https://www.wkuh.org/',job:'https://www.wkuh.org/home/board/list.do?mId=237&boardId=BBS_0000009'},
+{r:'충남',c:'천안시',n:'단국대학교병원',t:'상급종합',cat:'sang',home:'https://www.dkuh.co.kr/',job:'https://www.dkuh.co.kr/html/intro/0401.html'},
+{r:'대전',c:'대전',n:'건양대학교병원',t:'상급종합',cat:'sang',home:'https://www.kyuh.ac.kr/',job:'https://kyuh.recruiter.co.kr/'},
+{r:'충남',c:'천안시',n:'순천향대 천안병원',t:'대학병원',cat:'gen',home:'https://www.schmc.ac.kr/cheonan/',job:'https://schmc.recruiter.co.kr/'},
+{r:'대전',c:'대전',n:'대전을지대학교병원',t:'대학병원',cat:'gen',home:'http://www.eulji.or.kr/',job:'https://eulji.recruiter.co.kr/'},
+// ─── 그 외 지역 · 종합병원 ───
+{r:'전북',c:'전주시',n:'예수병원',t:'종합병원',cat:'gen',home:'https://www.jesushospital.com/',job:'https://www.jesushospital.com/sub.php?code=06_03'},
+{r:'광주',c:'광주',n:'광주기독병원',t:'종합병원',cat:'gen',home:'http://www.kch.or.kr/',job:'http://www.kch.or.kr/board/list.html?code=recruit'},
+{r:'전남',c:'목포시',n:'목포한국병원',t:'종합병원',cat:'gen',home:'https://www.hank.co.kr/',job:'http://www.hankook-hospital.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'대구',c:'대구',n:'대구파티마병원',t:'종합병원',cat:'gen',home:'https://fatima.or.kr/',job:'https://fatima.or.kr/front/board/boardlist.php?code=recruit'},
+{r:'경남',c:'창원시',n:'창원파티마병원',t:'종합병원',cat:'gen',home:'https://www.fatimahosp.co.kr/',job:'http://fatimahosp.co.kr/intro/intro06_01.html'},
+{r:'경북',c:'안동시',n:'안동병원',t:'종합병원',cat:'gen',home:'http://www.andonghospital.co.kr/',job:'http://www.andonghospital.co.kr/05_hospital/hospital05.php'},
+{r:'경북',c:'포항시',n:'포항세명기독병원',t:'종합병원',cat:'gen',home:'https://www.phgidok.com/main',job:'http://www.phkh.co.kr/pages/community/recruit.php'},
+{r:'대전',c:'대전',n:'대전선병원',t:'종합병원',cat:'gen',home:'https://www.sunhospital.com/',job:'https://www.sunhospital.co.kr/board/list.html?code=recruit'},
+{r:'부산',c:'부산',n:'대동병원',t:'종합병원',cat:'gen',home:'https://www.ddh.co.kr/',job:'http://www.daedong.co.kr/06_intro/intro_06.php'},
+{r:'부산',c:'부산',n:'부산부민병원',t:'종합병원',cat:'gen',home:'https://www.bumin.co.kr/'},
+{r:'전국',c:'전국',n:'힘찬병원(전국 네트워크)',t:'전문병원',cat:'gen',home:'https://himchanhospital.com/',job:'https://himchanhospital.com/intro/recruit.php'},
+{r:'전국',c:'전국',n:'나누리병원(전국 네트워크)',t:'전문병원',cat:'gen',home:'https://nanoori.co.kr/',job:'https://nanoori.co.kr/'},
+// ─── 공공·특수 (전국 네트워크) ───
+{r:'전국',c:'전국',n:'근로복지공단 병원(산재병원 네트워크)',t:'공공(산재)',cat:'pub',home:'https://www.kcomwel.or.kr/',job:'https://www.kcomwel.or.kr/kcomwel/empl/empl.jsp'},
+{r:'전국',c:'전국',n:'한국보훈복지의료공단(보훈병원 네트워크)',t:'공공(보훈)',cat:'pub',home:'https://www.bohun.or.kr/',job:'https://recruit.bohun.or.kr/'},
+{r:'전국',c:'전국',n:'대한적십자사 병원(네트워크)',t:'공공(적십자)',cat:'pub',home:'https://www.rch.or.kr/web/main/main',job:'https://www.redcross.or.kr/recruit/'},
+{r:'부산',c:'부산',n:'기장군도시관리공단',t:'공공기관',cat:'pub',home:'https://www.gijangcmc.or.kr/',job:'https://www.gijangcmc.or.kr/clean/index.php?pCode=clean_0201'},
+// ─── 그 외 지역 · 대기업 ───
+{r:'경기',c:'수원시',n:'강북삼성병원 사내부속의원(삼성전자)',t:'대기업 사내의원',cat:'gen',home:'https://main.kbsmc.co.kr/main/main.do',job:'https://kbsmc.recruiter.co.kr/'},
+{r:'전국',c:'전국',n:'삼성전자 사내의원',t:'대기업 사내의원',cat:'gen',home:'https://www.samsungcareers.com/insight/welfare',job:'https://www.samsungcareers.com/'},
+{r:'경남',c:'창원시',n:'성균관대 삼성창원병원',t:'상급종합',cat:'sang',home:'https://smc.skku.edu/',job:'https://smc.recruiter.co.kr/'},
+{r:'전국',c:'창원·의왕',n:'현대위아(사내 물리치료실)',t:'대기업',cat:'gen',home:'https://recruit.hyundai-wia.com/',job:'https://recruit.hyundai-wia.com/'},
+// ─── 그 외 지역 · 권역재활병원 ───
+{r:'경북',c:'경산시',n:'경북권역재활병원',t:'권역재활',cat:'rehab',home:'http://www.grrh.or.kr/',job:'http://www.grrh.or.kr/main/bbs/index.do?menu_idx=32&master_idx=3'},
+{r:'제주',c:'서귀포시',n:'제주권역재활병원',t:'권역재활',cat:'rehab',home:'https://jrh.or.kr/',job:'https://jrh.or.kr/employment?category='},
+{r:'강원',c:'춘천시',n:'강원권역재활병원',t:'권역재활',cat:'rehab',home:'http://www.grh.or.kr/',job:'http://www.grh.or.kr/main/board/list.do?menu_idx=37&manage_idx=15'},
+{r:'광주',c:'광주',n:'호남권역재활병원',t:'권역재활',cat:'rehab',home:'https://honamhosp.or.kr/',job:'https://honamhosp.or.kr/bbs/board.php?bo_table=6040'},
+// ─── 그 외 지역 · 지방의료원 ───
+{r:'부산',c:'부산',n:'부산광역시의료원',t:'지방의료원',cat:'pub',home:'https://www.busanmc.or.kr/',job:'https://www.busanmc.or.kr/busanmc/index.php?pCode=recruit'},
+{r:'경남',c:'창원시',n:'마산의료원',t:'지방의료원',cat:'pub',home:'https://www.mmc.or.kr/',job:'https://www.mmc.or.kr/board/list.do?boardId=BBS_0000021'},
+{r:'대구',c:'대구',n:'대구의료원',t:'지방의료원',cat:'pub',home:'https://www.daegumc.co.kr/',job:'https://www.daegumc.co.kr/content/01about/07_01.php'},
+{r:'경북',c:'포항시',n:'포항의료원',t:'지방의료원',cat:'pub',home:'https://pmc.or.kr/front/main.do',job:'http://www.phmed.or.kr/content/05community/03_01.php'},
+{r:'경북',c:'안동시',n:'안동의료원',t:'지방의료원',cat:'pub',home:'https://amc.or.kr/',job:'https://amc.or.kr/board/list.do?mnuid=060401'},
+{r:'경북',c:'김천시',n:'김천의료원',t:'지방의료원',cat:'pub',home:'https://gcmc.or.kr/',job:'https://gcmc.or.kr/board/list.do?mnuid=060401'},
+{r:'경북',c:'울진군',n:'울진군의료원',t:'지방의료원',cat:'pub',home:'http://www.umc.or.kr/',job:'http://www.umc.or.kr/index.php?page=html&mc=0603'},
+{r:'강원',c:'원주시',n:'원주의료원',t:'지방의료원',cat:'pub',home:'https://kwmc.or.kr/',job:'https://kwmc.or.kr/comm/recruit.html'},
+{r:'강원',c:'강릉시',n:'강릉의료원',t:'지방의료원',cat:'pub',home:'https://www.gnmc.or.kr/',job:'https://www.gnmc.or.kr/gnmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000'},
+{r:'강원',c:'속초시',n:'속초의료원',t:'지방의료원',cat:'pub',home:'https://www.sokchomc.co.kr/',job:'https://www.sokchomc.or.kr/sokchomc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000'},
+{r:'강원',c:'삼척시',n:'삼척의료원',t:'지방의료원',cat:'pub',home:'https://www.ksmc.or.kr/',job:'https://www.samcheokmc.or.kr/samcheokmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000'},
+{r:'강원',c:'영월군',n:'영월의료원',t:'지방의료원',cat:'pub',home:'https://www.youngwol.org/',job:'https://www.youngwol.org/youngwol/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000'},
+{r:'충북',c:'청주시',n:'청주의료원',t:'지방의료원',cat:'pub',home:'http://www.cjmc.or.kr/',job:'http://www.cjmc.or.kr/home/sub.php?menukey=138'},
+{r:'충북',c:'충주시',n:'충주의료원',t:'지방의료원',cat:'pub',home:'http://www.cbmc.or.kr/',job:'http://www.cbmc.or.kr/home/sub.php?menukey=306'},
+{r:'충남',c:'천안시',n:'천안의료원',t:'지방의료원',cat:'pub',home:'http://www.camc.or.kr/',job:'http://www.camc.or.kr/home/sub.php?menukey=137'},
+{r:'충남',c:'공주시',n:'공주의료원',t:'지방의료원',cat:'pub',home:'https://gjmc.or.kr/',job:'https://gjmc.or.kr/gjmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105003000000'},
+{r:'충남',c:'서산시',n:'서산의료원',t:'지방의료원',cat:'pub',home:'https://www.seosanmc.or.kr/',job:'https://www.seosanmc.or.kr/seosanmc/board/list.do?boardId=BBS_0000008&menuCd=DOM_000000105004000000'},
+{r:'충남',c:'홍성군',n:'홍성의료원',t:'지방의료원',cat:'pub',home:'http://www.hsmc.or.kr/',job:'http://www.hsmc.or.kr/home/sub.php?menukey=210'},
+{r:'전북',c:'군산시',n:'군산의료원',t:'지방의료원',cat:'pub',home:'https://www.kunmed.or.kr/',job:'https://www.kunmed.or.kr/board/bbs/board.php?bo_table=recruit'},
+{r:'전북',c:'남원시',n:'남원의료원',t:'지방의료원',cat:'pub',home:'http://www.namwonmed.or.kr/',job:'http://www.namwonmed.or.kr/content/hire_notice'},
+{r:'전북',c:'진안군',n:'진안군의료원',t:'지방의료원',cat:'pub',home:'https://www.jgmc.kr/',job:'http://www.jnmc.or.kr/board/list.asp?board_id=recruit_01'},
+{r:'전남',c:'목포시',n:'목포시의료원',t:'지방의료원',cat:'pub',home:'https://www.mokpomc.or.kr/',job:'https://www.mokpomc.com/bbs/board.php?bo_table=recruit'},
+{r:'전남',c:'순천시',n:'순천의료원',t:'지방의료원',cat:'pub',home:'https://jsmc.or.kr/',job:'http://www.scmc.or.kr/sub6_2.php'},
+{r:'전남',c:'강진군',n:'강진의료원',t:'지방의료원',cat:'pub',home:'http://www.gjmed.or.kr/',job:'http://www.gjmed.or.kr/home/sub.php?menukey=142'},
+{r:'제주',c:'제주시',n:'제주의료원',t:'지방의료원',cat:'pub',home:'https://www.jejumed.com/',job:'https://www.jejumed.com/skyboard/notice_03'},
+{r:'제주',c:'서귀포시',n:'서귀포의료원',t:'지방의료원',cat:'pub',home:'https://www.jjsmc.or.kr/',job:'https://www.jjsmc.or.kr/m/bbs/board.php?bo_table=4_5_1_1'},
+// ─── 재활 · 요양 · 노인전문 ───
+{r:'경기',c:'화성시',n:'근로복지공단 경기요양병원',t:'요양병원',cat:'rehab',home:'https://www.comwel.or.kr/gyeonggi/index.jsp',job:'https://www.kcomwel.or.kr/gyeonggicare/index.jsp'},
+{r:'경기',c:'안산시',n:'안산시립노인전문병원',t:'시립·요양',cat:'rehab',home:'http://www.bumomam.or.kr/',job:'http://www.ansan-silver.or.kr/bbs/board.php?bo_table=sub05_04'},
+{r:'서울',c:'강남구',n:'강남구립행복요양병원',t:'구립·요양',cat:'rehab',home:'http://www.gangnamguhospital.kr/',job:'http://www.gangnamhappy.or.kr/sub01/sub01_04.php'},
+{r:'서울',c:'도봉구',n:'도봉실버센터',t:'구립·요양',cat:'rehab',home:'https://dobongsilver.or.kr/',job:'http://www.dbcare.or.kr/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'양천구',n:'구립양천어르신요양센터',t:'구립·요양',cat:'rehab',home:'https://www.yc365sun.or.kr/',job:'http://www.ych.or.kr/'},
+{r:'서울',c:'서울',n:'시립서부노인전문요양센터',t:'시립·요양',cat:'rehab',home:'http://www.seobusilver.or.kr/',job:'https://www.seoulwest.or.kr/05_recruit/recruit_01.php'},
+{r:'서울',c:'서울',n:'시립동부노인전문요양센터',t:'시립·요양',cat:'rehab',home:'http://www.dbsc.or.kr/',job:'http://www.dbc.or.kr/'},
+{r:'서울',c:'서초구',n:'구립서초노인요양센터',t:'구립·요양',cat:'rehab',home:'https://www.sc9988.or.kr/',job:'https://www.seochosenior.co.kr/sub/sub01_05.php'},
+{r:'서울',c:'강동구',n:'서울시립 강동실버케어센터',t:'시립·요양',cat:'rehab',home:'http://www.gangdongcare.com/',job:'https://www.kdh.or.kr/'},
+{r:'서울',c:'마포구',n:'시립마포실버케어센터',t:'시립·요양',cat:'rehab',home:'https://www.mapocare.com/index.php',job:'http://www.silver-mapo.or.kr/'},
+{r:'경기',c:'수원시',n:'수원시립노인전문요양원',t:'시립·요양',cat:'rehab',home:'http://wonsilver.or.kr/',job:'http://www.swgeri.or.kr/'},
+{r:'경기',c:'용인시',n:'경기도립노인전문용인병원',t:'도립·요양',cat:'rehab',home:'https://www.silvernet.or.kr/',job:'http://yi1.or.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'시흥시',n:'경기도립노인전문시흥병원',t:'도립·요양',cat:'rehab',home:'https://www.gshospital.com/',job:'http://shgeri.or.kr/'},
+{r:'경기',c:'성남시',n:'성남시립노인요양센터',t:'시립·요양',cat:'rehab',home:'http://www.scsh.or.kr/',job:'http://www.scsh.or.kr/'},
+{r:'경기',c:'평택시',n:'경기도립노인전문평택병원',t:'도립·요양',cat:'rehab',home:'https://www.goodmsilver.co.kr/',job:'http://www.pthosp.or.kr/'},
+{r:'경기',c:'용인시',n:'경기도립노인전문병원',t:'도립·요양',cat:'rehab',home:'https://www.gg.go.kr/contents/contents.do?ciIdx=987166&menuId=266153',job:'http://www.silverh.or.kr/'},
+{r:'인천',c:'인천',n:'인천광역시립노인치매요양병원',t:'시립·요양',cat:'rehab',home:'https://icesh.co.kr/',job:'https://incheon.gnah.co.kr/'},
+{r:'대전',c:'대전',n:'대전광역시립 제1노인전문병원',t:'시립·요양',cat:'rehab',home:'https://ilovenoin.com/',job:'http://www.djsen.or.kr/'},
+{r:'부산',c:'부산',n:'부산 노인전문 제1병원',t:'시립·요양',cat:'rehab',home:'http://www.busangh.co.kr/',job:'https://www.busangeri.or.kr/'},
+{r:'경남',c:'양산시',n:'경상남도립양산노인전문병원',t:'도립·요양',cat:'rehab',home:'http://gygh.co.kr/',job:'http://www.gnsilver.or.kr/'},
+{r:'경북',c:'경산시',n:'경북도립경산노인전문요양병원',t:'도립·요양',cat:'rehab',home:'https://gssilver.co.kr/',job:'https://www.gbil.go.kr/'},
+{r:'강원',c:'강릉시',n:'강원특별자치도립강릉요양병원',t:'도립·요양',cat:'rehab',home:'http://www.gnmch.or.kr/new/',job:'http://www.gncare.or.kr/'},
+{r:'경기',c:'부천시',n:'휴앤유병원',t:'재활병원',cat:'rehab',home:'http://www.hunu.co.kr/',job:'http://www.huenu.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'성남시',n:'보바스기념병원',t:'재활병원',cat:'rehab',home:'https://www.bobath.co.kr/',job:'https://bobath.recruiter.co.kr/'},
+{r:'경기',c:'광주시',n:'SRC재활병원',t:'재활병원',cat:'rehab',home:'https://www.srchospital.com/',job:'http://www.srcmc.org/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'서울',n:'명지춘혜병원',t:'재활병원',cat:'rehab',home:'http://www.mjch.co.kr/',job:'http://www.mjch.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'서울',n:'서울재활병원',t:'재활병원',cat:'rehab',home:'http://www.seoulrh.com/',job:'http://www.seoulrh.com/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'마포구',n:'푸르메재단 넥슨어린이재활병원',t:'재활병원',cat:'rehab',home:'http://www.purmehospital.org/',job:'https://purmehospital.org/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'성남시',n:'분당러스크재활병원',t:'재활병원',cat:'rehab',home:'https://www.rusk.co.kr/renewal/',job:'http://www.rusk.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'용인시',n:'용인수지러스크재활병원',t:'재활병원',cat:'rehab',home:'http://www.rusk.or.kr/inc.php?inc=main/main',job:'http://sujirusk.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'인천',c:'인천',n:'브래덤병원',t:'재활병원',cat:'rehab',home:'http://www.braddom.co.kr/',job:'http://www.braddom.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'인천',c:'미추홀구',n:'미추홀재활전문병원',t:'재활병원',cat:'rehab',home:'http://www.mchhospital.co.kr/',job:'http://www.mchrh.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'강남구',n:'청담병원',t:'재활병원',cat:'rehab',home:'http://www.cdrusk.co.kr/renewal/',job:'http://www.cheongdamhospital.com/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'고양시',n:'일산중심재활병원',t:'재활병원',cat:'rehab',home:'https://www.centerh.co.kr/',job:'http://www.ilsanjungsim.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'의정부시',n:'의정부 힐링스병원',t:'재활병원',cat:'rehab',home:'http://www.healingsui.com/',job:'http://www.healings.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'수원시',n:'수원베데스다요양병원',t:'요양병원',cat:'rehab',home:'http://www.bedesdacare.co.kr/',job:'http://www.bedesdacare.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'수원시',n:'아주대학교요양병원',t:'요양병원',cat:'rehab',home:'https://www.ajich.or.kr/',job:'https://silver.ajoumc.or.kr/Web/Hospital/Recruit/List.aspx'},
+{r:'부산',c:'부산',n:'동아대학교대신요양병원',t:'요양병원',cat:'rehab',home:'http://daudh.or.kr/',job:'http://www.donga-silver.or.kr/bbs/board.php?bo_table=recruit'},
+{r:'인천',c:'인천',n:'인천새올요양병원',t:'요양병원',cat:'rehab',home:'http://www.saeall.net/default/',job:'http://www.saeol_ic.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'경기',c:'부천시',n:'가은병원',t:'요양병원',cat:'rehab',home:'http://gaeunhospital.com/',job:'http://www.gaeunhospital.co.kr/bbs/board.php?bo_table=recruit'},
+{r:'서울',c:'강서구',n:'서울참요양병원',t:'요양병원',cat:'rehab',home:'https://www.gangseochamhospital.co.kr/',job:'http://www.seoulcham.com/bbs/board.php?bo_table=recruit'}
+];
 
-            // --- 사립대병원 ---
-            { category: "university", type: "사립대(Big5)", name: "삼성서울병원", location: "서울", home: "http://www.samsunghospital.com/", job: "https://recruit.samsunghospital.com/" },
-            { category: "university", type: "사립대(Big5)", name: "서울아산병원", location: "서울", home: "https://www.amc.seoul.kr/", job: "https://recruit.amc.seoul.kr/" },
-            { category: "university", type: "사립대(Big5)", name: "세브란스병원", location: "서울", home: "https://sev.severance.healthcare/", job: "https://yuhs.recruiter.co.kr/" },
-            { category: "university", type: "사립대(Big5)", name: "가톨릭대 성모병원", location: "통합", home: "https://www.cmc.or.kr/", job: "https://recruit.cmcnu.or.kr/" },
-            { category: "university", type: "사립대", name: "강북삼성병원", location: "서울", home: "https://www.kbsmc.co.kr/", job: "https://kbsmc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "가톨릭 성빈센트", location: "수원", home: "https://www.cmcvincent.or.kr/", job: "https://recruit.cmcnu.or.kr/" },
-            { category: "university", type: "사립대", name: "인천성모병원", location: "인천", home: "https://www.cmcism.or.kr/", job: "https://recruit.cmcnu.or.kr/" },
-            { category: "university", type: "사립대", name: "국제성모병원", location: "인천", home: "https://www.ish.or.kr/", job: "https://recruit.ish.or.kr/" },
-            { category: "university", type: "사립대", name: "건국대학교병원", location: "서울", home: "https://www.kuh.ac.kr/", job: "https://kuh.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "경희대학교의료원", location: "서울", home: "https://www.khmc.or.kr/", job: "https://khmc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "고려대학교의료원", location: "서울", home: "https://www.kumc.or.kr/", job: "https://kumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "한양대학교의료원", location: "서울", home: "https://www.hyumc.com/", job: "https://recruit.hyumc.com/" },
-            { category: "university", type: "사립대", name: "이화의료원", location: "서울", home: "https://www.eumc.ac.kr/", job: "https://eumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "중앙대학교의료원", location: "서울", home: "https://ch.cauhs.or.kr/", job: "https://caumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "아주대학교병원", location: "수원", home: "https://hosp.ajoumc.or.kr/", job: "https://ajoumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "인하대학교병원", location: "인천", home: "https://www.inha.com/", job: "https://inha.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "가천대 길병원", location: "인천", home: "https://www.gilhospital.com/", job: "https://recruit.gilhospital.com/" },
-            { category: "university", type: "사립대", name: "순천향대학교병원", location: "통합", home: "https://www.schmc.ac.kr/", job: "https://schmc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "한림대학교의료원", location: "통합", home: "https://www.hallym.or.kr/", job: "https://recruit.hallym.or.kr/" },
-            { category: "university", type: "사립대", name: "인제대 백병원", location: "통합", home: "https://www.paik.ac.kr/", job: "https://paik.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "동국대 일산병원", location: "고양", home: "http://www.dumc.or.kr/index00.jsp", job: "https://dumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "차병원(CHA)", location: "통합", home: "https://www.chamc.co.kr/", job: "https://recruit.chamc.co.kr/" },
-            { category: "university", type: "사립대", name: "을지대학교의료원", location: "통합", home: "http://www.eulji.or.kr/", job: "https://eulji.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "원주세브란스기독", location: "원주", home: "https://www.ywmc.or.kr/web/www/home", job: "https://ywmc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "춘천성심병원", location: "춘천", home: "https://chuncheon.hallym.or.kr/", job: "https://recruit.hallym.or.kr/" },
-            { category: "university", type: "사립대", name: "영남대학교의료원", location: "대구", home: "https://yumc.ac.kr/", job: "https://yumc.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "계명대 동산의료원", location: "대구", home: "https://www.dsmc.or.kr/", job: "https://new.dsmc.or.kr/content/01about/08_01.php" },
-            { category: "university", type: "사립대", name: "대구가톨릭대병원", location: "대구", home: "https://www.dcmc.co.kr/", job: "https://www.dcmc.co.kr/content/06/060100.asp" },
-            { category: "university", type: "사립대", name: "울산대학교병원", location: "울산", home: "https://www.uuh.ulsan.kr/", job: "https://uuh.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "동아대학교병원", location: "부산", home: "https://www.damc.or.kr/", job: "https://www.damc.or.kr/04/01_list.php" },
-            { category: "university", type: "사립대", name: "고신대복음병원", location: "부산", home: "https://www.kosinmed.or.kr/", job: "https://www.kosinmed.or.kr/intro/intro_05.html" },
-            { category: "university", type: "사립대", name: "해운대백병원", location: "부산", home: "https://www.paik.ac.kr/haeundae/", job: "https://paik.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "조선대학교병원", location: "광주", home: "https://hosp.chosun.ac.kr/", job: "https://hosp.chosun.ac.kr/board/list.html?code=b_employ" },
-            { category: "university", type: "사립대", name: "원광대학교병원", location: "익산", home: "https://www.wkuh.org/", job: "https://www.wkuh.org/home/board/list.do?mId=237&boardId=BBS_0000009" },
-            { category: "university", type: "사립대", name: "단국대학교병원", location: "천안", home: "https://www.dkuh.co.kr/", job: "https://www.dkuh.co.kr/html/intro/0401.html" },
-            { category: "university", type: "사립대", name: "건양대학교병원", location: "대전", home: "https://www.kyuh.ac.kr/", job: "https://kyuh.recruiter.co.kr/" },
-            { category: "university", type: "사립대", name: "순천향대 천안병원", location: "천안", home: "https://www.schmc.ac.kr/cheonan/", job: "https://schmc.recruiter.co.kr/" },
+/* ═════════════ APP ═════════════ */
+const $ = s => document.querySelector(s);
+const grid = $('#hospitalGrid'), noResults = $('#noResults'), searchInput = $('#searchInput');
+const METRO = ['서울','경기','인천'];
+const REGION_ORDER = {'서울':0,'경기':1,'인천':2};
+let favorites = [];
+try { favorites = JSON.parse(localStorage.getItem('ptFavorites')) || []; } catch(e) { favorites = []; }
+const state = { q:'', region:'all', city:'all', cat:'all', sort:'region', view:'card' };
 
-            // --- 종합병원 ---
-            { category: "corporate", type: "종합병원", name: "인천기독병원", location: "인천", home: "https://www.goich.co.kr/", job: "http://www.ich.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "corporate", type: "종합병원", name: "인천세종병원", location: "인천", home: "https://incheon.sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
-            { category: "corporate", type: "종합병원", name: "나은병원", location: "인천", home: "https://www.luga.co.kr/", job: "http://www.naeun.co.kr/intro/intro_09.php" },
-            { category: "corporate", type: "종합병원", name: "나사렛국제병원", location: "인천", home: "http://www.nasaret.co.kr/", job: "http://www.nasaret.co.kr/about/about07.html" },
-            { category: "corporate", type: "종합병원", name: "인천효성병원", location: "인천", home: "http://www.hshospital.co.kr/", job: "http://www.hshospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "corporate", type: "종합병원", name: "부천세종병원", location: "부천", home: "https://sejongh.co.kr/", job: "https://sejongh.recruiter.co.kr/" },
-            { category: "corporate", type: "종합병원", name: "윌스기념병원", location: "수원", home: "https://allspine.com/", job: "https://allspine.com/member/recruit.html" },
-            { category: "corporate", type: "종합병원", name: "수원센텀병원", location: "수원", home: "http://suwoncentum.com/", job: "http://www.centumhosp.com/bbs/board.php?bo_table=recruit" },
-            { category: "corporate", type: "종합병원", name: "H+ 양지병원", location: "서울", home: "https://www.newyjh.com/main/index.htm", job: "https://new.hyangji.co.kr/intro/recruit.php" },
-            { category: "corporate", type: "종합병원", name: "혜민병원", location: "서울", home: "http://www.e-hyemin.co.kr/", job: "http://www.e-hyemin.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "corporate", type: "종합병원", name: "우리들병원", location: "서울", home: "https://wooridul.co.kr/", job: "https://wooridul.co.kr/" },
-            { category: "corporate", type: "종합병원", name: "힘찬병원", location: "통합", home: "https://himchanhospital.com/", job: "https://himchanhospital.com/intro/recruit.php" },
-            { category: "corporate", type: "종합병원", name: "나누리병원", location: "통합", home: "https://nanoori.co.kr/", job: "https://nanoori.co.kr/" },
-            { category: "corporate", type: "종합병원", name: "예수병원", location: "전주", home: "https://www.jesushospital.com/", job: "https://www.jesushospital.com/sub.php?code=06_03" },
-            { category: "corporate", type: "종합병원", name: "광주기독병원", location: "광주", home: "http://www.kch.or.kr/", job: "http://www.kch.or.kr/board/list.html?code=recruit" },
-            { category: "corporate", type: "종합병원", name: "목포한국병원", location: "목포", home: "https://www.hank.co.kr/", job: "http://www.hankook-hospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "corporate", type: "종합병원", name: "명지병원", location: "고양", home: "https://www.mjh.or.kr/", job: "https://mjh.recruiter.co.kr/" },
-            { category: "corporate", type: "종합병원", name: "분당제생병원", location: "성남", home: "https://www.dmc.or.kr/", job: "https://www.dmc.or.kr/portal/board/list/B0000030.do?menuNo=20503000" },
-            { category: "corporate", type: "종합병원", name: "삼육서울병원", location: "서울", home: "https://symcs.co.kr/", job: "https://symcs.co.kr/board/list.html?code=recruit" },
-            { category: "corporate", type: "종합병원", name: "대구파티마병원", location: "대구", home: "https://fatima.or.kr/", job: "https://fatima.or.kr/front/board/boardlist.php?code=recruit" },
-            { category: "corporate", type: "종합병원", name: "창원파티마병원", location: "창원", home: "https://www.fatimahosp.co.kr/", job: "http://fatimahosp.co.kr/intro/intro06_01.html" },
-            { category: "corporate", type: "종합병원", name: "안동병원", location: "안동", home: "http://www.andonghospital.co.kr/", job: "http://www.andonghospital.co.kr/05_hospital/hospital05.php" },
-            { category: "corporate", type: "종합병원", name: "포항세명기독병원", location: "포항", home: "https://www.phgidok.com/main", job: "http://www.phkh.co.kr/pages/community/recruit.php" },
-            { category: "corporate", type: "종합병원", name: "대전선병원", location: "대전", home: "https://www.sunhospital.com/", job: "https://www.sunhospital.co.kr/board/list.html?code=recruit" },
-            { category: "corporate", type: "종합병원", name: "대동병원", location: "부산", home: "https://www.ddh.co.kr/", job: "http://www.daedong.co.kr/06_intro/intro_06.php" },
-            { category: "corporate", type: "종합병원", name: "부민병원", location: "부산/서울", home: "https://www.bumin.co.kr/", job: "https://www.bumin.co.kr/" },
+const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const naverSearch = n => 'https://search.naver.com/search.naver?query=' + encodeURIComponent(n);
+const naverMap = h => 'https://map.naver.com/p/search/' + encodeURIComponent((h.r && h.r !== '전국' ? h.r + ' ' : '') + h.n);
+const naverJob = n => 'https://search.naver.com/search.naver?query=' + encodeURIComponent(n + ' 채용');
 
-            // --- 대기업 ---
-            { category: "corporate", type: "대기업", name: "강북삼성병원 (사내의원)", location: "수원/기흥", home: "https://main.kbsmc.co.kr/main/main.do", job: "https://kbsmc.recruiter.co.kr/" },
-            { category: "corporate", type: "대기업", name: "삼성전자 (사내의원)", location: "전국", home: "https://www.samsungcareers.com/insight/welfare", job: "https://www.samsungcareers.com/" },
-            { category: "corporate", type: "대기업", name: "삼성창원병원 (부속)", location: "창원", home: "https://smc.skku.edu/", job: "https://smc.recruiter.co.kr/" },
-            { category: "corporate", type: "대기업", name: "현대위아", location: "창원/의왕", home: "https://recruit.hyundai-wia.com/", job: "https://recruit.hyundai-wia.com/" },
-            { category: "public", type: "공공기관", name: "기장군도시관리공단", location: "부산", home: "https://www.gijangcmc.or.kr/", job: "https://www.gijangcmc.or.kr/clean/index.php?pCode=clean_0201" },
+const CAT_STYLE = {
+  sang:  { badge:'bg-amber-50 text-amber-700 ring-1 ring-amber-600/20', tile:'bg-amber-50 text-amber-600', icon:'ph-fill ph-star' },
+  gen:   { badge:'bg-stone-100 text-stone-600 ring-1 ring-stone-400/20', tile:'bg-stone-100 text-stone-500', icon:'ph ph-hospital' },
+  pub:   { badge:'bg-sky-50 text-sky-700/90 ring-1 ring-sky-600/20', tile:'bg-sky-50 text-sky-600/80', icon:'ph ph-bank' },
+  rehab: { badge:'bg-emerald-50 text-emerald-700/90 ring-1 ring-emerald-600/20', tile:'bg-emerald-50 text-emerald-600/80', icon:'ph ph-wheelchair' },
+  plan:  { badge:'bg-white text-stone-500 border border-dashed border-stone-400/60', tile:'bg-stone-50 text-stone-400', icon:'ph ph-hammer' }
+};
 
-            // --- 재활/요양 ---
-            { category: "rehab", type: "시립병원", name: "안산시립노인전문병원", location: "안산", home: "http://www.bumomam.or.kr/", job: "http://www.ansan-silver.or.kr/bbs/board.php?bo_table=sub05_04" },
-            { category: "rehab", type: "구립병원", name: "강남구립행복요양병원", location: "서울", home: "http://www.gangnamguhospital.kr/", job: "http://www.gangnamhappy.or.kr/sub01/sub01_04.php" },
-            { category: "rehab", type: "구립병원", name: "도봉실버센터", location: "서울", home: "https://dobongsilver.or.kr/", job: "http://www.dbcare.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "구립병원", name: "구립양천어르신요양센터", location: "서울", home: "https://www.yc365sun.or.kr/", job: "http://www.ych.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "시립서부노인전문요양센터", location: "서울", home: "http://www.seobusilver.or.kr/", job: "https://www.seoulwest.or.kr/05_recruit/recruit_01.php" },
-            { category: "rehab", type: "시립병원", name: "시립동부노인전문요양센터", location: "서울", home: "http://www.dbsc.or.kr/", job: "http://www.dbc.or.kr/" },
-            { category: "rehab", type: "구립병원", name: "구립서초노인요양센터", location: "서울", home: "https://www.sc9988.or.kr/", job: "https://www.seochosenior.co.kr/sub/sub01_05.php" },
-            { category: "rehab", type: "구립병원", name: "(서울시립)강동실버케어센터", location: "서울", home: "http://www.gangdongcare.com/", job: "https://www.kdh.or.kr/" },
-            { category: "rehab", type: "구립병원", name: "시립마포실버케어센터", location: "서울", home: "https://www.mapocare.com/index.php", job: "http://www.silver-mapo.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "수원시립노인전문요양원", location: "수원", home: "http://wonsilver.or.kr/", job: "http://www.swgeri.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "경기도립노인전문용인병원", location: "용인", home: "https://www.silvernet.or.kr/", job: "http://yi1.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "시립병원", name: "경기도립노인전문시흥병원", location: "시흥", home: "https://www.gshospital.com/", job: "http://shgeri.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "성남시립노인요양센터", location: "성남", home: "http://www.scsh.or.kr/", job: "http://www.scsh.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "경기도립노인전문평택병원", location: "평택", home: "https://www.goodmsilver.co.kr/", job: "http://www.pthosp.or.kr/" },
-            { category: "rehab", type: "도립병원", name: "경기도립노인전문병원", location: "용인", home: "https://www.gg.go.kr/contents/contents.do?ciIdx=987166&menuId=266153", job: "http://www.silverh.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "인천광역시립노인치매요양병원", location: "인천", home: "https://icesh.co.kr/", job: "https://incheon.gnah.co.kr/" },
-            { category: "rehab", type: "시립병원", name: "대전광역시립 제1노인전문병원", location: "대전", home: "https://ilovenoin.com/", job: "http://www.djsen.or.kr/" },
-            { category: "rehab", type: "시립병원", name: "부산 노인전문 제1병원", location: "부산", home: "http://www.busangh.co.kr/", job: "https://www.busangeri.or.kr/" },
-            { category: "rehab", type: "도립병원", name: "경상남도립양산노인전문병원", location: "통합", home: "http://gygh.co.kr/", job: "http://www.gnsilver.or.kr/" },
-            { category: "rehab", type: "도립병원", name: "경북도립경산노인전문요양병원", location: "경북", home: "https://gssilver.co.kr/", job: "https://www.gbil.go.kr/" },
-            { category: "rehab", type: "도립병원", name: "강원특별자치도립강릉요양병원", location: "강릉", home: "http://www.gnmch.or.kr/new/", job: "http://www.gncare.or.kr/" },
-            { category: "rehab", type: "재활병원", name: "휴앤유병원", location: "부천", home: "http://www.hunu.co.kr/", job: "http://www.huenu.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "보바스기념병원", location: "성남", home: "https://www.bobath.co.kr/", job: "https://bobath.recruiter.co.kr/" },
-            { category: "rehab", type: "재활병원", name: "SRC재활병원", location: "광주", home: "https://www.srchospital.com/", job: "http://www.srcmc.org/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "명지춘혜병원", location: "서울", home: "http://www.mjch.co.kr/", job: "http://www.mjch.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "서울재활병원", location: "서울", home: "http://www.seoulrh.com/", job: "http://www.seoulrh.com/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "푸르메재단 넥슨어린이재활병원", location: "서울", home: "http://www.purmehospital.org/", job: "https://purmehospital.org/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "분당러스크재활병원", location: "성남", home: "https://www.rusk.co.kr/renewal/", job: "http://www.rusk.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "용인수지러스크재활", location: "용인", home: "http://www.rusk.or.kr/inc.php?inc=main/main", job: "http://sujirusk.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "브래덤병원", location: "인천", home: "http://www.braddom.co.kr/", job: "http://www.braddom.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "미추홀재활전문병원", location: "인천", home: "http://www.mchhospital.co.kr/", job: "http://www.mchrh.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "청담병원", location: "서울", home: "http://www.cdrusk.co.kr/renewal/", job: "http://www.cheongdamhospital.com/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "일산중심재활병원", location: "고양", home: "https://www.centerh.co.kr/", job: "http://www.ilsanjungsim.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "재활병원", name: "의정부 힐링스병원", location: "의정부", home: "http://www.healingsui.com/", job: "http://www.healings.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "수원베데스다요양병원", location: "수원", home: "http://www.bedesdacare.co.kr/", job: "http://www.bedesdacare.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "아주대학교요양병원", location: "수원", home: "https://www.ajich.or.kr/", job: "https://silver.ajoumc.or.kr/Web/Hospital/Recruit/List.aspx" },
-            { category: "rehab", type: "요양병원", name: "동아대학교대신요양병원", location: "부산", home: "http://daudh.or.kr/", job: "http://www.donga-silver.or.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "인천새올요양병원", location: "인천", home: "http://www.saeall.net/default/", job: "http://www.saeol_ic.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "가은병원", location: "부천", home: "http://gaeunhospital.com/", job: "http://www.gaeunhospital.co.kr/bbs/board.php?bo_table=recruit" },
-            { category: "rehab", type: "요양병원", name: "서울참요양병원", location: "서울", home: "https://www.gangseochamhospital.co.kr/", job: "http://www.seoulcham.com/bbs/board.php?bo_table=recruit" }
-        ];
+/* stats */
+(function initStats(){
+  const jh = hospitals.filter(h => h.jh).length;
+  const sang = hospitals.filter(h => h.cat==='sang' && METRO.includes(h.r)).length;
+  $('#statTotal').textContent = hospitals.length.toLocaleString();
+  $('#statJh').textContent = jh.toLocaleString();
+  $('#statSang').textContent = sang.toLocaleString();
+  updateFavStat();
+})();
+function updateFavStat(){ $('#statFav').textContent = favorites.length.toLocaleString(); }
 
-        const grid = document.getElementById('hospitalGrid');
-        const searchInput = document.getElementById('searchInput');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const noResults = document.getElementById('noResults');
-        const scrollBtn = document.getElementById('scrollToTopBtn');
-        const modal = document.getElementById('recruitModal');
-        const modalHospitalName = document.getElementById('modalHospitalName');
+/* reveal observer (IO 미지원 환경 폴백 포함) */
+const hasIO = typeof IntersectionObserver !== 'undefined';
+const io = hasIO ? new IntersectionObserver(entries => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+}, { threshold: .06, rootMargin: '0px 0px -4% 0px' }) : { observe(el){ el.classList.add('in'); }, unobserve(){} };
 
-        // Local Storage for Favorites
-        let favorites = JSON.parse(localStorage.getItem('ptFavorites')) || [];
+/* filtering */
+function getFiltered(){
+  const q = state.q.trim().toLowerCase();
+  let list = hospitals.filter(h => {
+    if(state.region !== 'all'){
+      if(state.region === 'etc'){ if(METRO.includes(h.r)) return false; }
+      else if(h.r !== state.region) return false;
+    }
+    if(state.city !== 'all'){
+      if(state.region === 'etc'){ if(h.r !== state.city) return false; }
+      else if(h.c !== state.city) return false;
+    }
+    if(state.cat === 'fav'){ if(!favorites.includes(h.n)) return false; }
+    else if(state.cat !== 'all' && h.cat !== state.cat) return false;
+    if(q){
+      const hay = (h.n + ' ' + h.r + ' ' + h.c + ' ' + h.t).toLowerCase();
+      if(!q.split(/\s+/).every(w => hay.includes(w))) return false;
+    }
+    return true;
+  });
+  list.sort((a,b) => {
+    if(state.sort === 'name') return a.n.localeCompare(b.n, 'ko');
+    const ra = REGION_ORDER[a.r] ?? (a.r === '전국' ? 99 : 10);
+    const rb = REGION_ORDER[b.r] ?? (b.r === '전국' ? 99 : 10);
+    if(ra !== rb) return ra - rb;
+    if(a.r !== b.r) return a.r.localeCompare(b.r, 'ko');
+    const CP = { sang:0, gen:1, pub:2, rehab:3, plan:4 };
+    if(CP[a.cat] !== CP[b.cat]) return CP[a.cat] - CP[b.cat];
+    if(a.c !== b.c) return a.c.localeCompare(b.c, 'ko');
+    return a.n.localeCompare(b.n, 'ko');
+  });
+  return list;
+}
 
-        function toggleFavorite(hospitalName, event) {
-            // Prevent event bubbling if clicked inside anchor tag
-            if(event) event.stopPropagation();
-            
-            const index = favorites.indexOf(hospitalName);
-            if (index > -1) {
-                favorites.splice(index, 1); // Remove if already favorite
-            } else {
-                favorites.push(hospitalName); // Add to favorites
-            }
-            localStorage.setItem('ptFavorites', JSON.stringify(favorites));
-            filterData(); // Re-render current view to update heart icons
-        }
+/* render */
+function actionButtons(h, idx, compact){
+  const homeBtn = h.home
+    ? `<a href="${esc(h.home)}" target="_blank" rel="noopener" class="btn flex items-center justify-center gap-1.5 rounded-full ring-1 ring-ink-900/10 bg-white px-3 py-2 text-[12px] font-medium text-stone-600 hover:ring-ink-900/30 hover:text-ink-900"><i class="ph ph-house-line"></i>${compact?'':'홈페이지'}</a>`
+    : `<a href="${naverSearch(h.n)}" target="_blank" rel="noopener" class="btn flex items-center justify-center gap-1.5 rounded-full ring-1 ring-ink-900/10 bg-white px-3 py-2 text-[12px] font-medium text-stone-600 hover:ring-ink-900/30 hover:text-ink-900" title="공식 홈페이지 미확인 — 네이버 검색으로 연결"><i class="ph ph-magnifying-glass"></i>${compact?'':'검색'}</a>`;
+  const mapBtn = `<a href="${naverMap(h)}" target="_blank" rel="noopener" class="btn flex items-center justify-center gap-1.5 rounded-full ring-1 ring-ink-900/10 bg-white px-3 py-2 text-[12px] font-medium text-stone-600 hover:ring-ink-900/30 hover:text-ink-900"><i class="ph ph-map-pin"></i>${compact?'':'지도'}</a>`;
+  const jobBtn = `<button data-act="recruit" data-idx="${idx}" class="btn flex items-center justify-center gap-1.5 rounded-full bg-brand-600 hover:bg-brand-700 px-3 py-2 text-[12px] font-semibold text-white"><i class="ph ph-briefcase"></i>${compact?'':'채용'}</button>`;
+  return homeBtn + mapBtn + jobBtn;
+}
 
-        // Modal Functions
-        function openRecruitModal(name) {
-            modalHospitalName.textContent = name;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.classList.add('modal-active');
-        }
+function renderList(){
+  const data = getFiltered();
+  $('#resultCount').textContent = data.length.toLocaleString();
+  grid.innerHTML = '';
+  noResults.classList.toggle('hidden', data.length > 0);
+  grid.className = state.view === 'card'
+    ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'
+    : 'rounded-[1.4rem] bg-white ring-1 ring-ink-900/[.06] shadow-[0_10px_30px_-18px_rgba(28,27,24,.12)] divide-y divide-ink-900/[.05] overflow-hidden';
 
-        function closeModal() {
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            document.body.classList.remove('modal-active');
-        }
+  const frag = document.createDocumentFragment();
+  data.forEach((h, i) => {
+    const idx = hospitals.indexOf(h);
+    const st = CAT_STYLE[h.cat] || CAT_STYLE.gen;
+    const isFav = favorites.includes(h.n);
+    const heart = `<button data-act="fav" data-idx="${idx}" class="heart-btn text-[19px] leading-none ${isFav?'text-rose-500':'text-stone-300 hover:text-rose-400'}" aria-label="찜하기" aria-pressed="${isFav}"><i class="${isFav?'ph-fill':'ph'} ph-heart pointer-events-none"></i></button>`;
+    const locTxt = h.c && h.c !== h.r ? `${h.r} · ${h.c}` : h.r;
+    const sangStar = h.cat === 'sang' ? `<i class="ph-fill ph-star text-amber-400 text-[12px]" title="상급종합병원"></i>` : '';
 
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal || e.target.classList.contains('modal-overlay')) {
-                closeModal();
-            }
-        });
+    if(state.view === 'card'){
+      const el = document.createElement('article');
+      el.className = 'hcard reveal bg-white rounded-[1.35rem] ring-1 ring-ink-900/[.06] shadow-[0_10px_30px_-18px_rgba(28,27,24,.12)] p-5 flex flex-col';
+      el.style.transitionDelay = (Math.min(i, 20) % 10) * 40 + 'ms';
+      el.innerHTML = `
+        <div class="flex items-start justify-between mb-3.5">
+          <span class="w-10 h-10 rounded-[0.85rem] ${st.tile} flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,.7)]"><i class="${st.icon} text-[18px]"></i></span>
+          ${heart}
+        </div>
+        <h3 class="text-[15.5px] font-bold tracking-tight text-ink-900 leading-snug flex items-center gap-1.5" style="text-wrap:balance">${esc(h.n)} ${sangStar}</h3>
+        <div class="mt-2 mb-4 flex flex-wrap items-center gap-1.5">
+          <span class="inline-flex items-center gap-1 text-[11.5px] text-stone-400"><i class="ph ph-map-pin text-[11px]"></i>${esc(locTxt)}</span>
+          <span class="inline-flex items-center rounded-md px-1.5 py-0.5 text-[10.5px] font-semibold ${st.badge}">${esc(h.t)}</span>
+        </div>
+        <div class="mt-auto grid grid-cols-3 gap-1.5">${actionButtons(h, idx, false)}</div>`;
+      frag.appendChild(el); io.observe(el);
+    } else {
+      const el = document.createElement('div');
+      el.className = 'row-item flex items-center gap-3 px-4 sm:px-6 py-3';
+      el.innerHTML = `
+        ${heart}
+        <div class="min-w-0 flex-1">
+          <p class="text-[14px] font-semibold text-ink-900 truncate flex items-center gap-1.5">${esc(h.n)} ${sangStar}</p>
+          <p class="text-[11.5px] text-stone-400 mt-0.5 flex items-center gap-1.5 flex-wrap"><span>${esc(locTxt)}</span><span class="inline-flex rounded px-1 py-px text-[10px] font-semibold ${st.badge}">${esc(h.t)}</span></p>
+        </div>
+        <div class="flex gap-1.5 shrink-0">${actionButtons(h, idx, true)}</div>`;
+      frag.appendChild(el);
+    }
+  });
+  grid.appendChild(frag);
+}
 
-        // Scroll to Top Logic
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.classList.remove('hidden', 'opacity-0', 'translate-y-4');
-            } else {
-                scrollBtn.classList.add('hidden', 'opacity-0', 'translate-y-4');
-            }
-        });
+/* city chips */
+function buildCityBar(){
+  const bar = $('#cityBar');
+  if(state.region === 'all'){ bar.classList.add('hidden'); bar.classList.remove('flex'); state.city = 'all'; return; }
+  const pool = hospitals.filter(h => state.region === 'etc' ? !METRO.includes(h.r) : h.r === state.region);
+  const keys = [...new Set(pool.map(h => state.region === 'etc' ? h.r : h.c))].sort((a,b)=>a.localeCompare(b,'ko'));
+  if(state.city !== 'all' && !keys.includes(state.city)) state.city = 'all';
+  bar.innerHTML = [`<button data-city="all" class="city-btn chip shrink-0 px-3 py-1 rounded-full text-[11.5px] font-semibold ${state.city==='all'?'bg-ink-900 text-white':'bg-ink-900/[.04] text-stone-500 hover:text-ink-900'}">${state.region==='etc'?'전체 지역':'전체 시·군·구'}</button>`]
+    .concat(keys.map(k => `<button data-city="${esc(k)}" class="city-btn chip shrink-0 px-3 py-1 rounded-full text-[11.5px] font-medium ${state.city===k?'bg-ink-900 text-white':'bg-ink-900/[.04] text-stone-500 hover:text-ink-900'}">${esc(k)}</button>`)).join('');
+  bar.classList.remove('hidden'); bar.classList.add('flex');
+}
 
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+/* modal */
+let lastFocus = null;
+function openRecruitModal(idx){
+  const h = hospitals[idx]; if(!h) return;
+  lastFocus = document.activeElement;
+  $('#modalTitle').textContent = h.n;
+  $('#modalSub').textContent = (h.c && h.c!==h.r ? h.r+' '+h.c : h.r) + ' · ' + h.t + ' — 각 사이트에서 "물리치료사" 또는 병원명으로 검색하세요';
+  const mk = (href, icon, iconColor, title, subtitle, primary) => `
+    <a href="${href}" target="_blank" rel="noopener" class="btn group flex items-center justify-between rounded-2xl ${primary?'bg-brand-600 text-white hover:bg-brand-700':'bg-white ring-1 ring-ink-900/10 hover:ring-ink-900/30 text-ink-900'} px-4 py-3.5">
+      <span class="flex items-center gap-3 min-w-0">
+        <i class="${icon} text-[19px] ${primary?'text-white':iconColor}"></i>
+        <span class="min-w-0"><span class="block text-[13.5px] font-semibold truncate">${title}</span><span class="block text-[11px] ${primary?'text-white/70':'text-stone-400'} truncate">${subtitle}</span></span>
+      </span>
+      <span class="shrink-0 w-8 h-8 rounded-full ${primary?'bg-white/15':'bg-ink-900/[.05]'} flex items-center justify-center transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><i class="ph ph-arrow-up-right text-[13px]"></i></span>
+    </a>`;
+  let html = '';
+  if(h.job) html += mk(esc(h.job), 'ph-fill ph-buildings', '', '병원 공식 채용 페이지', '가장 정확한 1차 확인 경로', true);
+  html += mk('https://www.goodjobpt.com/job', 'ph ph-user-circle-plus', 'text-emerald-600', '굿잡피티', '물리치료사 전문 채용 포털', false);
+  html += mk('https://www.saramin.co.kr/zf_user/', 'ph ph-briefcase', 'text-sky-600', '사람인', '종합 채용 플랫폼', false);
+  html += mk('https://www.medijob.cc/', 'ph ph-stethoscope', 'text-rose-500', '메디잡', '의료 전문 채용 포털', false);
+  html += mk(naverJob(h.n), 'ph ph-magnifying-glass', 'text-stone-500', '네이버에서 "'+esc(h.n)+' 채용" 검색', '최신 공고 통합 검색', false);
+  $('#modalLinks').innerHTML = html;
+  const m = $('#recruitModal');
+  m.classList.remove('opacity-0','pointer-events-none');
+  m.classList.add('modal-open');
+  document.body.classList.add('no-scroll');
+}
+function closeModal(){
+  const m = $('#recruitModal');
+  m.classList.add('opacity-0','pointer-events-none');
+  m.classList.remove('modal-open');
+  document.body.classList.remove('no-scroll');
+  if(lastFocus) lastFocus.focus();
+}
+$('#recruitModal').addEventListener('click', e => { if(e.target.classList.contains('modal-overlay')) closeModal(); });
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeModal();
+  if(e.key === '/' && document.activeElement !== searchInput){ e.preventDefault(); searchInput.focus(); }
+});
 
-        // Render Function
-        function renderHospitals(data) {
-            grid.innerHTML = '';
-            if (data.length === 0) {
-                noResults.classList.remove('hidden');
-                return;
-            }
-            noResults.classList.add('hidden');
+/* favorites */
+function toggleFavorite(name){
+  const i = favorites.indexOf(name);
+  if(i > -1) favorites.splice(i,1); else favorites.push(name);
+  try { localStorage.setItem('ptFavorites', JSON.stringify(favorites)); } catch(e){}
+  updateFavStat(); renderList();
+}
 
-            data.forEach(h => {
-                // Color coding based on category
-                let badgeColor = "bg-gray-100 text-gray-800";
-                let iconClass = "fa-hospital";
-                
-                if (h.category === 'public') { badgeColor = "bg-blue-100 text-blue-800"; iconClass = "fa-landmark"; }
-                else if (h.category === 'university') { badgeColor = "bg-purple-100 text-purple-800"; iconClass = "fa-graduation-cap"; }
-                else if (h.category === 'rehab') { badgeColor = "bg-green-100 text-green-800"; iconClass = "fa-wheelchair"; }
-                else if (h.category === 'corporate') { badgeColor = "bg-orange-100 text-orange-800"; iconClass = "fa-building"; }
+/* event delegation */
+grid.addEventListener('click', e => {
+  const btn = e.target.closest('[data-act]'); if(!btn) return;
+  const idx = +btn.dataset.idx;
+  if(btn.dataset.act === 'fav') toggleFavorite(hospitals[idx].n);
+  if(btn.dataset.act === 'recruit') openRecruitModal(idx);
+});
 
-                const isFavorite = favorites.includes(h.name);
-                const heartIconClass = isFavorite ? "fa-solid fa-heart text-red-500" : "fa-regular fa-heart text-gray-400 hover:text-red-400";
+/* controls */
+document.querySelectorAll('.seg-btn').forEach(b => b.addEventListener('click', () => {
+  state.region = b.dataset.region; state.city = 'all';
+  document.querySelectorAll('.seg-btn').forEach(x => {
+    const on = x === b;
+    x.classList.toggle('bg-ink-900', on); x.classList.toggle('text-white', on);
+    x.classList.toggle('font-semibold', on); x.classList.toggle('font-medium', !on);
+    x.classList.toggle('text-stone-500', !on); x.classList.toggle('hover:text-ink-900', !on);
+  });
+  buildCityBar(); renderList();
+}));
+document.querySelectorAll('.cat-btn').forEach(b => b.addEventListener('click', () => {
+  state.cat = b.dataset.cat;
+  document.querySelectorAll('.cat-btn').forEach(x => {
+    const on = x === b;
+    x.className = 'cat-btn chip shrink-0 px-3.5 py-1.5 rounded-full text-[12.5px] ' + (on
+      ? 'font-semibold bg-brand-600 text-white'
+      : 'font-medium bg-white ring-1 ring-ink-900/10 text-stone-500 hover:ring-ink-900/25');
+  });
+  renderList();
+}));
+$('#cityBar').addEventListener('click', e => {
+  const b = e.target.closest('.city-btn'); if(!b) return;
+  state.city = b.dataset.city; buildCityBar(); renderList();
+});
+searchInput.addEventListener('input', () => {
+  state.q = searchInput.value;
+  $('#clearSearch').classList.toggle('hidden', !state.q);
+  renderList();
+});
+$('#clearSearch').addEventListener('click', () => { searchInput.value=''; state.q=''; $('#clearSearch').classList.add('hidden'); renderList(); searchInput.focus(); });
+$('#sortBtn').addEventListener('click', () => {
+  state.sort = state.sort === 'region' ? 'name' : 'region';
+  $('#sortLabel').textContent = state.sort === 'region' ? '지역순' : '이름순';
+  renderList();
+});
+$('#viewCard').addEventListener('click', () => setView('card'));
+$('#viewList').addEventListener('click', () => setView('list'));
+function setView(v){
+  state.view = v;
+  const cardOn = v === 'card';
+  $('#viewCard').className = 'btn w-8 h-8 rounded-full flex items-center justify-center ' + (cardOn ? 'bg-ink-900 text-white' : 'text-stone-400 hover:text-ink-900');
+  $('#viewList').className = 'btn w-8 h-8 rounded-full flex items-center justify-center ' + (!cardOn ? 'bg-ink-900 text-white' : 'text-stone-400 hover:text-ink-900');
+  renderList();
+}
+$('#resetAll').addEventListener('click', () => {
+  state.q=''; searchInput.value=''; $('#clearSearch').classList.add('hidden');
+  state.cat='all'; state.region='all'; state.city='all';
+  document.querySelector('.seg-btn[data-region="all"]').click();
+  document.querySelector('.cat-btn[data-cat="all"]').click();
+});
 
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-300 card-hover flex flex-col justify-between h-full relative";
-                
-                card.innerHTML = `
-                    <!-- Favorite Button -->
-                    <button onclick="toggleFavorite('${h.name}', event)" class="absolute top-4 right-4 text-2xl heart-btn z-10 focus:outline-none" aria-label="찜하기">
-                        <i class="${heartIconClass}"></i>
-                    </button>
+/* scroll-to-top via sentinel observer */
+const topBtn = $('#scrollToTopBtn');
+if(hasIO){
+  const sentinel = document.createElement('div');
+  sentinel.style.cssText = 'position:absolute;top:420px;height:1px;width:1px;';
+  document.body.prepend(sentinel);
+  new IntersectionObserver(([en]) => {
+    const show = !en.isIntersecting && en.boundingClientRect.top < 0;
+    topBtn.classList.toggle('hidden', !show);
+    topBtn.classList.toggle('flex', show);
+  }).observe(sentinel);
+} else { topBtn.classList.remove('hidden'); topBtn.classList.add('flex'); }
+topBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
 
-                    <div>
-                        <div class="flex justify-between items-start mb-4 pr-8">
-                            <div class="w-10 h-10 rounded-full ${badgeColor} flex items-center justify-center">
-                                <i class="fa-solid ${iconClass} text-lg"></i>
-                            </div>
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${badgeColor}">
-                                ${h.type}
-                            </span>
-                        </div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-1">${h.name}</h3>
-                        <p class="text-sm text-gray-500 mb-4"><i class="fa-solid fa-location-dot mr-1"></i> ${h.location}</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 mt-2">
-                        <a href="${h.home}" target="_blank" class="flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition-colors">
-                            <i class="fa-solid fa-house mr-2"></i> 홈페이지
-                        </a>
-                        <button onclick="openRecruitModal('${h.name}')" class="flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors">
-                            <i class="fa-solid fa-file-signature mr-2"></i> 3대 취업 포털
-                        </button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Filter Logic
-        let currentFilter = 'all';
-
-        function filterData() {
-            const query = searchInput.value.toLowerCase();
-            const filtered = hospitals.filter(h => {
-                const matchesSearch = h.name.toLowerCase().includes(query) || h.location.toLowerCase().includes(query);
-                
-                let matchesCategory = false;
-                if (currentFilter === 'all') {
-                    matchesCategory = true;
-                } else if (currentFilter === 'favorites') {
-                    matchesCategory = favorites.includes(h.name);
-                } else {
-                    matchesCategory = h.category === currentFilter;
-                }
-
-                return matchesSearch && matchesCategory;
-            });
-            renderHospitals(filtered);
-        }
-
-        // Event Listeners
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                // Update active state
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-blue-600', 'text-white');
-                    b.classList.add('bg-gray-200', 'text-gray-700');
-                });
-                e.target.classList.remove('bg-gray-200', 'text-gray-700');
-                e.target.classList.add('bg-blue-600', 'text-white');
-
-                currentFilter = e.target.dataset.filter;
-                filterData();
-            });
-        });
-
-        searchInput.addEventListener('input', filterData);
-
-        // Initial Render
-        renderHospitals(hospitals);
-
-    </script>
+/* init */
+buildCityBar();
+renderList();
+</script>
 </body>
 </html>
